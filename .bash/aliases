@@ -1,0 +1,62 @@
+# changing directory to code project
+function c { cd ~/code/$1; }
+function h { cd ~/$1; }
+
+# misc
+alias reload='. ~/.bash_profile'
+alias quit='exit'
+alias t='tail -F -n 100'
+alias m="mate -w"
+alias ..='cd ..'
+
+# ls
+alias l='ls -1'
+alias ll='ls -lh'
+alias la='ls -lah'
+alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
+
+# git
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gds='git diff --stat'
+alias gdp='git diff master~1'
+alias gdps='git diff --stat master~1'
+alias gc='git commit'
+alias gci='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status'
+alias gst='git status'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias sd='script/destroy'
+alias tlog='tail -f log/development.log'
+alias scaffold='script/generate nifty_scaffold'
+alias migrate='rake db:migrate db:test:clone'
+alias rst='touch tmp/restart.txt'
+
+# commands starting with % for pasting from web
+alias %=' '
+
+# jruby, jrails
+alias j='jruby -S'
+alias jss='j script/server'
+alias jsc='j script/console'
+
+# gc rails
+alias gcruby='/Users/edgarsbeigarts/rubygc/bin/ruby'
+alias gcrake='/Users/edgarsbeigarts/rubygc/bin/rake'
+alias gcgem='/Users/edgarsbeigarts/rubygc/bin/gem'
+alias gcirb='/Users/edgarsbeigarts/rubygc/bin/irb'
+alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
+
+# proxy
+alias p='echo $http_proxy'
+alias pon='export http_proxy=http://proxy.alise.lv:8080'
+alias poff='export http_proxy='

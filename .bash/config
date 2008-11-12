@@ -1,0 +1,33 @@
+for file in ~/.bash/functions/*; do
+  source $file
+done
+
+source ~/.bash/aliases
+
+source ~/.bash/completions/git
+source ~/.bash/completions/subversion
+source ~/.bash/completions/mategem
+complete -C ~/.bash/completions/rake -o default rake
+complete -C ~/.bash/completions/project -o default c
+complete -C ~/.bash/completions/capistrano -o default cap
+
+source ~/.bash/paths
+
+# export PS1='ebei@mac:\w$ '
+export PS1='\w$(_scm_info)$ '
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/sw/bin
+export EDITOR="mate -w"
+export SVN_EDITOR=$EDITOR
+stty erase ^H
+
+### Bash http://blog.macromates.com/2008/working-with-history-in-bash/
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
+### Oracle
+export ORACLE_HOME=/Library/Oracle/10.2.0.4.0
+export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
+export TNS_ADMIN=$ORACLE_HOME/network/admin
+export NLS_LANG=AMERICAN_AMERICA.UTF8
+export PATH=$HOME/bin:$PATH:$ORACLE_HOME/bin
