@@ -50,6 +50,6 @@ _scm_info() {
         fi
     fi
     s="${s}${ACTIVE_COMPILER}"
-    s="${s:+ ${s}}"
+    s="${s:+${s} }"
     printf "$s"
 }

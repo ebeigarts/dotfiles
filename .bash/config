@@ -13,9 +13,10 @@ complete -C ~/.bash/completions/capistrano -o default cap
 
 source ~/.bash/paths
 
-# export PS1='\w % '
-# export PS1='\w$(_scm_info) % '
-export PS1="[\[\e[35;1m\]\w\[\e[34;1m\]\$(_scm_info)\[\e[0m\]]\[\e[32;1m\] %\[\e[0m\] "
+# prompt: [ root ~ master +? ] % cmd
+_user_root() { [ $USER == "root" ] && printf 'root '; }
+export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[34;1m\] \$(_scm_info)\[\e[0m\]]\[\e[32;1m\] %\[\e[0m\] "
+
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/sw/bin
 export EDITOR="mate -w"
 export SVN_EDITOR=$EDITOR

@@ -783,3 +783,59 @@ reload
 ls -G
 man ls
 ls -la
+ssh nekaz@core
+mate ./dotfiles/
+mkdir ~/.bash
+mat ~/.bash
+mate ~/.bash/
+cp ~/Resources/dotfiles/bash/* ~/.bash
+cp ~/Resources/dotfiles/bash/* ~/.bash/
+cp -r ~/Resources/dotfiles/bash/* ~/.bash/
+mate ~/.bash/
+cp -r ~/Resources/dotfiles/zsh/aliases ~/.bash/aliases2
+ls -lAh
+la
+ls
+l
+mate ~/.bashrc
+su -
+mate ./.bash*
+exit
+mate ./.bash*
+exit
+su -
+ln -s ~/.bash_profile ~/.profile
+chown
+su -
+su -
+su -i
+su -l
+su -
+..
+cd timeweb/
+su -
+whoami 
+mkdir code/dotfiles
+cp ~/.bash* ~/code/dotfiles/
+cp -r ~/.bash* ~/code/dotfiles/
+cp -r ~/.irbrc ~/code/dotfiles/
+cp -r ~/. ~/code/dotfiles/
+ls
+c dotfiles 
+git init
+git add .
+gci
+exit
+cd ./code/timeweb/
+git initssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssss
+la /usr/bin/
+ssh nekaz@core
+c timeweb 
+reload && ls -la ./
+clear
+reload && cd ./Downloads/ && ls -la ./
+reload && cd ~/Downloads/ && ls -la ./
+/opt/local/
+export LSCOLORS=ExFxCxDxBxegedabagacad
+reload
+ls -la
