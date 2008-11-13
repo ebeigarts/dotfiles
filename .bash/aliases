@@ -17,6 +17,7 @@ alias la='ls -lah'
 alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
 
 # git
+alias g='git'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
