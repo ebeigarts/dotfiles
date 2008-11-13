@@ -13,13 +13,12 @@ alias e='echo'
 # kill
 alias k='kill'
 alias k9='kill -9'
-function ka () { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
-function ka9 () { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
+function ka { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
+function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 
 # textmate
-alias m="mate -w"
-alias m.="mate ."
-alias mm="mate ."
+function m { mate ${1:-.}; }
+function cm { cd ~/code/$1; mate .; }
 
 # ls
 alias l='ls -1'
@@ -36,6 +35,7 @@ alias gds='git diff --stat'
 alias gdp='git diff master~1'
 alias gdps='git diff --stat master~1'
 alias gi='git commit'
+alias gc='git commit'
 alias gci='git commit'
 alias gca='git commit -a'
 alias gia='git commit -a'
@@ -44,6 +44,7 @@ alias gb='git branch'
 alias gs='git status'
 alias gst='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+function ga { git add ${*:-.}; }
 
 # svn
 alias s='svn'

@@ -9,6 +9,7 @@ source ~/.bash/completions/subversion
 source ~/.bash/completions/mategem
 complete -C ~/.bash/completions/rake -o default rake
 complete -C ~/.bash/completions/project -o default c
+complete -C ~/.bash/completions/project -o default cm
 complete -C ~/.bash/completions/capistrano -o default cap
 
 source ~/.bash/paths
