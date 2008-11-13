@@ -1,0 +1,27 @@
+[user]
+  name = Edgars Beigarts
+  email = ebeigarts@alise.lv
+[alias]
+  co = checkout
+[apply]
+  whitespace = nowarn
+[core]
+  editor = mate -w
+[color]
+  status = auto
+  branch = auto
+  interactive = auto
+  diff = auto
+[color "branch"]
+  current = green bold
+  local = yellow bold
+  remote = red bold
+[color "diff"]
+  meta = black bold
+  frag = cyan bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow bold
+  changed = red bold # also deleted
+  untracked = black bold

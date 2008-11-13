@@ -7,6 +7,7 @@ alias reload='. ~/.bash_profile'
 alias quit='exit'
 alias t='tail -F -n 100'
 alias m="mate -w"
+alias m.="mate ."
 alias ..='cd ..'
 
 # ls

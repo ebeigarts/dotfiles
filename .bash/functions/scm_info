@@ -2,7 +2,7 @@ _scm_info() {
     local s=
     if [[ -d ".svn" ]] ; then
         local r=$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )
-        s="[r$r$(svn status | grep -q -v '^?' && echo -n "*" )]"
+        s="r$r$(svn status | grep -q -v '^?' && echo -n "*" )"
     else
         local d=$(git rev-parse --git-dir 2>/dev/null ) b= r= a=
         if [[ -n "${d}" ]] ; then
@@ -46,10 +46,10 @@ _scm_info() {
 
             b=${b#refs/heads/}
             b=${b// }
-            [[ -n "${r}${b}${a}" ]] && s="[${r:+${r}:}${b}${a:+ ${a}}]"
+            [[ -n "${r}${b}${a}" ]] && s="${r:+${r}:}${b}${a:+ ${a}}"
         fi
     fi
     s="${s}${ACTIVE_COMPILER}"
-    s="${s:+${s} }"
+    s="${s:+ ${s}}"
     printf "$s"
 }

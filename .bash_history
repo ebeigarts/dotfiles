@@ -511,3 +511,275 @@ su -
 su -i
 su -l
 su -
+..
+cd timeweb/
+c timeweb 
+su -
+whoami 
+mkdir code/dotfiles
+cp ~/.bash* ~/code/dotfiles/
+cp -r ~/.bash* ~/code/dotfiles/
+cp -r ~/.irbrc ~/code/dotfiles/
+cp -r ~/. ~/code/dotfiles/
+ls
+c dotfiles 
+git init
+git add .
+gci
+exit
+cd ./code/timeweb/
+git initssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssss
+ssh nekaz@core
+cp -r ~/.bash* ~/code/dotfiles/
+cp -r ~/.irbrc ~/code/dotfiles/
+cp -r ~/. ~/code/dotfiles/
+ls
+c dotfiles 
+git init
+git add .
+gci
+exit
+cd ./code/timeweb/
+git initssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss ssssssssssssssssssssssss
+ssh nekaz@core
+l
+lh
+la
+cd /usr/bin/
+reload
+ls -la
+p
+p
+proxy
+pon
+poff
+q
+q
+mate ~/.gemrc
+gem list
+cd ~/Resources/
+git clone git://github.com/ryanb/dotfiles.git
+mate ./dotfiles/
+mkdir ~/.bash
+mat ~/.bash
+mate ~/.bash/
+cp ~/Resources/dotfiles/bash/* ~/.bash
+cp ~/Resources/dotfiles/bash/* ~/.bash/
+cp -r ~/Resources/dotfiles/bash/* ~/.bash/
+mate ~/.bash/
+cp -r ~/Resources/dotfiles/zsh/aliases ~/.bash/aliases2
+ls -lAh
+la
+l
+mate ~/.bashrc
+su -
+mate ./.bash*
+exit
+mate ./.bash*
+exit
+su -
+ln -s ~/.bash_profile ~/.profile
+chown
+su -
+su -
+su -i
+su -l ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+su -
+..
+cd timeweb/
+su -
+whoami 
+mkdir code/dotfiles
+cp ~/.bash* ~/code/dotfiles/
+cp -r ~/.bash* ~/code/dotfiles/
+cp -r ~/.irbrc ~/code/dotfiles/
+cp -r ~/. ~/code/dotfiles/
+c dotfiles 
+git init
+git add .
+gci
+exit
+env
+export PS1="\[\e[36;1m\]\u@\[\e[32;1m\]\H> \[\e[0m\]"
+export PS1="\[\e[36;1m\]\w@\[\e[32;1m\]\H> \[\e[0m\]"
+export PS1="\[\e[36;1m\]\w\[\e[32;1m\]$(_scm_info) $\[\e[0m\]"
+export PS1="\[\e[36;1m\]\w\[\e[32;1m\]$(_scm_info)$ \[\e[0m\]"
+export PS1="\[\e[36;1m\]\w\[\e[35;1m\]$(_scm_info)$ \[\e[0m\]"
+export PS1="\[\e[32;1m\]\w\[\e[35;1m\]$(_scm_info)$ \[\e[0m\]"
+export PS1="\[\e[33;1m\]\w\[\e[35;1m\]$(_scm_info)$ \[\e[0m\]"
+export PS1="\[\e[32;1m\]\w\[\e[33;1m\]$(_scm_info)\[\e[36;1m\]$ \[\e[0m\]"
+cd ~
+export PS1="\[\e[32;1m\]\w\[\e[33;1m\]$(_scm_info)\[\e[35;1m\]$ \[\e[0m\]"
+export PS1="\[\e[32;1m\]\w\[\e[33;1m\]$(_scm_info)\[\e[35;1m\] $\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[33;1m\]$(_scm_info)\[\e[35;1m\]$ \[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[38;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[31;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[30;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[33;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[34;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[35;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[36;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[37;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[32;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[35;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[31;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[33;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[34;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[32;1m\]$(_scm_info)\[\e[32;1m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[0m\]$(_scm_info)\[\e[32;2m\]$\[\e[0m\] "
+cd ..
+export PS1="\[\e[35;1m\]\w\[\e[0m\]$(_scm_info)\[\e[0;32m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[0m\]$(_scm_info)\[\e[32;0m\]$\[\e[0m\] "
+export PS1="\[\e[35;1m\]\w\[\e[0m\]$(_scm_info)\[\e[32;1m\]$\[\e[0m\] "
+h
+c timeweb 
+clear
+reload
+ls
+mate ./dotfiles/
+mkdir ~/.bash
+mat ~/.bash
+mate ~/.bash/
+cp ~/Resources/dotfiles/bash/* ~/.bash
+cp ~/Resources/dotfiles/bash/* ~/.bash/
+cp -r ~/Resources/dotfiles/bash/* ~/.bash/
+mate ~/.bash/
+cp -r ~/Resources/dotfiles/zsh/aliases ~/.bash/aliases2
+ls -lAh
+la
+l
+mate ~/.bashrc
+su -
+mate ./.bash*
+exit
+mate ./.bash*
+exit
+su -
+ln -s ~/.bash_profile ~/.profile
+chown
+su -
+su -
+su -i
+su -l
+su -
+..
+cd timeweb/
+su -
+whoami 
+mkdir code/dotfiles
+cp ~/.bash* ~/code/dotfiles/
+cp -r ~/.bash* ~/code/dotfiles/
+cp -r ~/.irbrc ~/code/dotfiles/
+cp -r ~/. ~/code/dotfiles/
+c dotfiles 
+git init
+git add .
+gci
+exit
+c timeweb 
+mate ~/.bash
+m.
+echo "\n<\[\033[0;32m\]\h\[\033[0m\]:\[\033[0;37m\]\u\[\033[0m\]> \j [\$(date +%m-%d\" \"%H:%M)] \w (\[\033[0;36m\]\$(/Users/sparc/bin/TBytes.sh) Mb\[\033[0m\])\n! "
+echo '\n<\[\033[0;32m\]\h\[\033[0m\]:\[\033[0;37m\]\u\[\033[0m\]> \j [\$(date +%m-%d\" \"%H:%M)] \w (\[\033[0;36m\]\$(/Users/sparc/bin/TBytes.sh) Mb\[\033[0m\])\n! '
+eval "\n<\[\033[0;32m\]\h\[\033[0m\]:\[\033[0;37m\]\u\[\033[0m\]> \j [\$(date +%m-%d\" \"%H:%M)] \w (\[\033[0;36m\]\$(/Users/sparc/bin/TBytes.sh) Mb\[\033[0m\])\n! "
+echo -e "\n<\[\033[0;32m\]\h\[\033[0m\]:\[\033[0;37m\]\u\[\033[0m\]> \j [\$(date +%m-%d\" \"%H:%M)] \w (\[\033[0;36m\]\$(/Users/sparc/bin/TBytes.sh) Mb\[\033[0m\])\n! "
+echo -e "\[\033[0;32m\]"
+echo -e "\[\033[0;32m\]\[\033[0m\]"
+echo -e "[033[0;32m][033[0m]"
+echo -e "\033[0;32m\]\[\022[0m\]"
+echo -e "\033[0;32m][022[0m]"
+echo -e "\033\[0;32m][022[0m]"
+echo -e "\033[0;32m][\022[0m]"
+echo -e "\033 a \022"
+echo -e "\[\033[0;32m\]\[\022[0m\]"
+echo -e '\[\033[0;32m]\[\033[0m\]'
+echo -e '\033[0;32m]\[\033[0m'
+echo -e '\033[0;32m]\\033[0m'
+echo -e '\033[0;32m]\033[0m'
+echo -e '\033[0;32m\033[0m'
+echo -e '\033[0;1ma\033[0m'
+echo -e '\033[0;2ma\033[0m'
+echo -e '\033[0;3ma\033[0m'
+echo -e '\033[0;4ma\033[0m'
+echo -e '\033[0;5ma\033[0m'
+echo -e '\033[0;6ma\033[0m'
+echo -e '\033[0;7ma\033[0m'
+echo -e '\033[0;8ma\033[0m'
+echo -e '\033[0;9ma\033[0m'
+echo -e '\033[0;10ma\033[0m'
+echo -e '\033[0;11ma\033[0m'
+echo -e '\033[0;12ma\033[0m'
+echo -e '\033[0;13ma\033[0m'
+echo -e '\033[0;14ma\033[0m'
+echo -e '\033[0;15ma\033[0m'
+echo -e '\033[0;16ma\033[0m'
+echo -e '\033[0;17ma\033[0m'
+echo -e '\033[0;18ma\033[0m'
+echo -e '\033[0;19ma\033[0m'
+echo -e '\033[0;20ma\033[0m'
+echo -e '\033[0;21ma\033[0m'
+echo -e '\033[0;22ma\033[0m'
+echo -e '\033[0;23ma\033[0m'
+echo -e '\033[0;24ma\033[0m'
+echo -e '\033[0;25ma\033[0m'
+echo -e '\033[0;26ma\033[0m'
+echo -e '\033[0;27ma\033[0m'
+echo -e '\033[0;28ma\033[0m'
+echo -e '\033[0;29ma\033[0m'
+echo -e '\033[0;30ma\033[0m'
+echo -e '\033[0;31ma\033[0m'
+echo -e '\033[0;32ma\033[0m'
+echo -e '\033[0;33ma\033[0m'
+echo -e '\033[0;34ma\033[0m'
+echo -e '\033[0;35ma\033[0m'
+echo -e '\033[0;36ma\033[0m'
+echo -e '\033[0;37ma\033[0m'
+echo -e '\033[0;38ma\033[0m'
+echo -e '\033[0;38m~/code/timeweb[master ?]$\033[0m'
+echo -e '\033[0;38m~/code/timeweb[master ?] $\033[0m'
+echo -e '\033[0;32m~/code/timeweb[master ?] $\033[0m'
+echo -e '\033[0;32m~/code/timeweb[master ?] $\033[0m ls'
+echo -e '\033[0;31m~/code/timeweb[master ?] $\033[0m ls'
+echo -e '\033[0;33m~/code/timeweb[master ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb[master ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb\033[0m[\033[0;36mmaster ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb[\033[0;36mmaster ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb\033[0m\033[0;36m[master ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb\033[0ma\033[0;36m[master ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb\033[0;36m[master ?] $\033[0m ls'
+echo -e '\033[0;36m~/code/timeweb\033[0;33m[master ?] $\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] $\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \032[0m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0m$\032[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;32m$\032[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;32m$\034[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;34m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;35m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;36m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;37m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;38m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;31m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?] \033[0;32m$\033[0m ls'
+echo -e '\033[0;32m~/code/timeweb\033[0;33m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;33m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;34m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;35m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;36m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;37m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;38m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;39m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;32m[master ?]\033[0;32m$\033[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;32m[master ?]\033[0;32m$\035[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;32m[master ?]\033[0;35m$\032[0m ls'
+echo -e '\033[0m~/code/timeweb\033[0;32m[master ?]\033[0;35m$\033[0m ls'
+echo -e '\033[0;35m~/code/timeweb\033[0;32m[master ?]\033[0;35m$\033[0m ls'
+mate ~/.bash*
+echo -e '\033[0;35m~/code/timeweb\033[0;33m[master ?]\033[0;35m$\033[0m ls'
+ls
+echo -e '\033[0;35m~/code/timeweb\033[0;33m[master ?]\033[0;32m$\033[0m ls'
+export S_COLORS=no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.flac=01;35:*.mp3=01;35:*.mpc=01;35:*.ogg=01;35:*.wav=01;35:"
+reload
+ls -G
+man ls
+ls -la
