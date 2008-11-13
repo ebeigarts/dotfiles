@@ -5,10 +5,21 @@ function h { cd ~/$1; }
 # misc
 alias reload='. ~/.bash_profile'
 alias quit='exit'
+alias ..='cd ..'
+alias up='cd ..'
 alias t='tail -F -n 100'
+alias e='echo'
+
+# kill
+alias k='kill'
+alias k9='kill -9'
+function ka () { kill $(ps xc | grep -wi "$*" | awk '{print $1}'); }
+function ka9 () { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
+
+# textmate
 alias m="mate -w"
 alias m.="mate ."
-alias ..='cd ..'
+alias mm="mate ."
 
 # ls
 alias l='ls -1'
@@ -24,7 +35,6 @@ alias gd='git diff'
 alias gds='git diff --stat'
 alias gdp='git diff master~1'
 alias gdps='git diff --stat master~1'
-alias gc='git commit'
 alias gi='git commit'
 alias gci='git commit'
 alias gca='git commit -a'
@@ -34,6 +44,12 @@ alias gb='git branch'
 alias gs='git status'
 alias gst='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+# svn
+alias s='svn'
+alias sl='svn up'
+alias si='svn commit'
+alias sci='svn commit'
 
 # rails
 alias sc='script/console'
