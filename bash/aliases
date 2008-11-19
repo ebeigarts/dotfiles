@@ -19,8 +19,6 @@ function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 # textmate
 function m { mate ${*:-.}; }
 function cm { cd ~/code/$1; mate .; }
-function mategem { mate "$(gem environment gemdir)/gems/$1"; }
-alias mgem='mategem'
 
 # ls
 alias l='ls -1'

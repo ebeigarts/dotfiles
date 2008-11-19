@@ -6,8 +6,7 @@ source ~/.bash/aliases
 
 source ~/.bash/completions/git
 source ~/.bash/completions/subversion
-complete -C ~/.bash/completions/mategem -o default mategem
-complete -C ~/.bash/completions/mategem -o default mgem
+source ~/.bash/completions/mategem
 complete -C ~/.bash/completions/rake -o default rake
 complete -C ~/.bash/completions/project -o default c
 complete -C ~/.bash/completions/project -o default cm
