@@ -7,7 +7,7 @@ alias reload='. ~/.bash_profile'
 alias quit='exit'
 alias ..='cd ..'
 alias up='cd ..'
-alias t='tail -F -n 100'
+# alias t='tail -F -n 100'
 alias e='echo'
 
 # kill
@@ -81,3 +81,6 @@ alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
 alias p='echo $http_proxy'
 alias pon='export http_proxy=http://proxy.alise.lv:8080'
 alias poff='export http_proxy='
+
+# newtab
+alias t='osascript ~/.bash/scripts/newtab.scpt `pwd`'
