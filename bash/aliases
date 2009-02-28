@@ -83,4 +83,4 @@ alias pon='export http_proxy=http://proxy.alise.lv:8080'
 alias poff='export http_proxy='
 
 # newtab
-alias t='osascript ~/.bash/scripts/newtab.scpt `pwd`'
+alias t='osascript ~/.bash/scripts/newtab.scpt `pwd` > /dev/null'
