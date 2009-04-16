@@ -43,7 +43,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 alias gst='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | awk '{print \$3}' | xargs git rm"
 function ga { git add ${*:-.}; }
 
 # svn
@@ -67,8 +67,8 @@ alias %=' '
 
 # jruby, jrails
 alias j='jruby -S'
-alias jss='j script/server'
-alias jsc='j script/console'
+alias jss='jruby ./script/server'
+alias jsc='jruby ./script/console'
 
 # gc rails
 alias gcruby='/Users/edgarsbeigarts/rubygc/bin/ruby'
@@ -81,6 +81,9 @@ alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
 alias p='echo $http_proxy'
 alias pon='export http_proxy=http://proxy.alise.lv:8080'
 alias poff='export http_proxy='
+
+# sqlplus with readline
+alias sqlplus="rlwrap sqlplus"
 
 # newtab
 alias t='osascript ~/.bash/scripts/newtab.scpt `pwd` > /dev/null'

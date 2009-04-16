@@ -1,0 +1,9 @@
+set completion-ignore-case on
+
+"\e[1~": beginning-of-line    # Home key
+"\e[4~": end-of-line    # End key
+"\e[3~": delete-char    # Delete key
+"\e[5C": forward-word    # Ctrl+right 
+"\e[5D": backward-word    # Ctrl+left 
+"\e\e[C": forward-word    # Alt+right 
+"\e\e[D": backward-word    # Alt+left

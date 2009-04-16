@@ -38,3 +38,7 @@ export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME/network/admin
 export NLS_LANG=AMERICAN_AMERICA.UTF8
 export PATH=$HOME/bin:$PATH:$ORACLE_HOME/bin
+
+### JRuby
+export JRUBY_HOME=/opt/local/share/java/jruby
+export PATH=$PATH:$JRUBY_HOME/lib

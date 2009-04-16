@@ -1,7 +1,34 @@
+require 'pp'
 require 'rubygems'
 require 'wirble'
 Wirble.init
 Wirble.colorize
+
+IRB.conf[:AUTO_INDENT] = true
+
+class Object
+  # get all the methods for an object that aren't basic methods from Object
+  def my_methods
+    (methods - Object.instance_methods).sort
+  end
+end
+
+# from http://themomorohoax.com/2009/03/27/irb-tip-load-files-faster
+def ls
+  %x{ls}.split("\n")
+end
+
+def cd(dir)
+  Dir.chdir(dir)
+  Dir.pwd
+end
+
+def pwd
+  Dir.pwd
+end
+
+# alias p pp
+# alias quit exit
 
 def change_log(stream)
   ActiveRecord::Base.logger = Logger.new(stream)
@@ -25,5 +52,12 @@ def i!()
   case ActionController::Base.session.first[:session_key].gsub(/^_(.*)_session$/, '\1').to_sym
   when :timeweb
     User.current = User.first
+    User.current_org_id = User.current.select_current_responsibility.org_id
+    User.current_payroll_id = User.current.employee.payroll_id
   end
+end
+
+def nls
+  ActiveRecord::Base.connection.select_all("select * from v$nls_parameters").each { |h| puts "#{h['parameter']} => #{h['value']}"};
+  nil
 end
