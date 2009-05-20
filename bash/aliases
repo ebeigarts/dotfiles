@@ -78,6 +78,7 @@ alias gcirb='/Users/edgarsbeigarts/rubygc/bin/irb'
 alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
 
 # proxy
+alias psudo='sudo env http_proxy=http://proxy.alise.lv:8080'
 alias p='echo $http_proxy'
 alias pon='export http_proxy=http://proxy.alise.lv:8080'
 alias poff='export http_proxy='
