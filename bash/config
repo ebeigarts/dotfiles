@@ -18,7 +18,7 @@ source ~/.bash/paths
 _user_root() { [ $USER == "root" ] && printf 'root '; }
 export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[34;1m\] \$(_scm_info)\[\e[0m\]]\[\e[32;1m\] %\[\e[0m\] "
 
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/sw/bin
+export PATH=$HOME/bin:$HOME/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
 export EDITOR="mate -w"
 export SVN_EDITOR=$EDITOR
 stty erase ^H
@@ -32,12 +32,15 @@ shopt -s histappend
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+### Ruby
+export GEM_HOME=$HOME/.gem/ruby/1.8
+
 ### Oracle
-export ORACLE_HOME=/Library/Oracle/10.2.0.4.0
-export DYLD_LIBRARY_PATH=$ORACLE_HOME/lib
-export TNS_ADMIN=$ORACLE_HOME/network/admin
+export ORACLE_IC_HOME=$HOME/Library/Oracle/instantclient
+export DYLD_LIBRARY_PATH=$ORACLE_IC_HOME
+export TNS_ADMIN=$DYLD_LIBRARY_PATH
+export PATH=$PATH:$DYLD_LIBRARY_PATH
 export NLS_LANG=AMERICAN_AMERICA.UTF8
-export PATH=$HOME/bin:$PATH:$ORACLE_HOME/bin
 
 ### Java
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
@@ -45,3 +48,7 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
 ### JRuby
 export JRUBY_HOME=/opt/local/share/java/jruby
 export PATH=$PATH:$JRUBY_HOME/lib
+
+### Homebrew
+export PATH=$HOME/code/homebrew/bin:$PATH
+export MANPATH=$HOME/code/homebrew/share/man:$MANPATH

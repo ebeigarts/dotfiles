@@ -1,10 +1,17 @@
-require 'pp'
 require 'rubygems'
 require 'wirble'
+require 'hirb'
+require 'irb/completion'
+require 'irb/ext/save-history'
+
+ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
+IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history" 
+
 Wirble.init
 Wirble.colorize
-
-IRB.conf[:AUTO_INDENT] = true
+extend Hirb::Console
 
 class Object
   # get all the methods for an object that aren't basic methods from Object
@@ -60,4 +67,8 @@ end
 def nls
   ActiveRecord::Base.connection.select_all("select * from v$nls_parameters").each { |h| puts "#{h['parameter']} => #{h['value']}"};
   nil
+end
+
+def t(data, *fields)
+  table data, :fields => fields
 end
