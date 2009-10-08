@@ -50,5 +50,5 @@ export JRUBY_HOME=/opt/local/share/java/jruby
 export PATH=$PATH:$JRUBY_HOME/lib
 
 ### Homebrew
-export PATH=$HOME/code/homebrew/bin:$PATH
+export PATH=$HOME/code/homebrew/sbin:$HOME/code/homebrew/bin:$PATH
 export MANPATH=$HOME/code/homebrew/share/man:$MANPATH
