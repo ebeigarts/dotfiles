@@ -11,7 +11,10 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 
 Wirble.init
 Wirble.colorize
+
 extend Hirb::Console
+Hirb.enable :pager => false
+Hirb.enable :formatter => false
 
 class Object
   # get all the methods for an object that aren't basic methods from Object
@@ -52,15 +55,19 @@ end
 
 # Shortcuts / aliases
 
-def l!() show_log end
-def r!() reload! end
+def l!; show_log end
+def r!; reload! end
 
-def i!()
-  case ActionController::Base.session.first[:session_key].gsub(/^_(.*)_session$/, '\1').to_sym
-  when :timeweb
-    User.current = User.first
-    User.current_org_id = User.current.select_current_responsibility.org_id
-    User.current_payroll_id = User.current.employee.payroll_id
+def i!
+  case File.basename(RAILS_ROOT).downcase.to_sym
+  when :mytime
+    User.current_user = User.find_by_login("SIMANRAI")
+    User.current_employee = User.current_user.employee
+    User.current_org_id = User.current_user.select_current_responsibility.org_id
+    User.current_payroll_id = User.current_user.employee.payroll_id
+  when :crmdata
+    User.current_user = User.find_by_login("SIMANRAI")
+    User.current_responsibility = User.current_user.active_responsibilities.first
   end
 end
 

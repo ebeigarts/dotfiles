@@ -28,19 +28,16 @@ alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
 
 # git
 alias g='git'
-alias gl='git pull'
-alias gp='git push'
+alias gpll='git pull'
+alias gpsh='git push'
 alias gd='git diff'
 alias gds='git diff --stat'
 alias gdc='git diff --cached'
 alias gdcs='git diff --cached --stat'
 alias gdp='git diff master~1'
 alias gdps='git diff --stat master~1'
-alias gi='git commit'
 alias gc='git commit'
 alias gci='git commit'
-alias gca='git commit -a'
-alias gia='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
@@ -60,7 +57,6 @@ alias ss='script/server'
 alias sg='script/generate'
 alias sd='script/destroy'
 alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
 alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
 
@@ -83,7 +79,7 @@ alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
 alias psudo='sudo env http_proxy=http://proxy.alise.lv:8080'
 alias p='echo $http_proxy'
 alias pon='export http_proxy=http://proxy.alise.lv:8080'
-alias poff='export http_proxy='
+alias poff='unset http_proxy'
 
 # sqlplus with readline
 alias sqlplus="rlwrap sqlplus"
