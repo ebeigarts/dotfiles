@@ -1,0 +1,60 @@
+def l!(stream = STDOUT)
+  ActiveRecord::Base.logger = Logger.new(stream)
+  if Rails::VERSION::MAJOR >= 2 and Rails::VERSION::MINOR >= 2
+    ActiveRecord::Base.connection_pool.clear_reloadable_connections!
+  else
+    ActiveRecord::Base.clear_active_connections!
+  end
+  "logger reset!"
+end
+
+def r!
+  reload!
+end
+
+def t(data, *fields)
+  if defined?(table)
+    if fields.empty?
+      table data
+    else
+      table data, :fields => fields
+    end
+  else
+    data
+  end
+end
+
+def arb
+  ActiveRecord::Base
+end
+
+def sql(query)
+  arb.connection.select_all(query)
+end
+
+def tsql(query)
+  t sql(query)
+end
+
+def nls
+  tsql "select * from v$nls_parameters"
+end
+
+def explain(query)
+  explain_query = "EXPLAIN PLAN FOR #{query}"
+  display_query = "SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)"
+  arb.connection.execute(explain_query)
+  puts explain_query
+  arb.connection.select_values(display_query).each do |line|
+    puts line
+  end
+  true
+end
+
+def ddl(name, type = :table)
+  type = type.to_s.upcase
+  schema, name = name.to_s.upcase.split('.').reverse
+  query = "SELECT DBMS_METADATA.GET_DDL('#{[type, name, schema].compact.join(%{', '})}') FROM DUAL"
+  printf arb.connection.select_value(query)
+  true
+end

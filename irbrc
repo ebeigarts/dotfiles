@@ -1,170 +1,61 @@
-require 'rubygems'
-require 'wirble'
-require 'hirb'
-require 'irb/completion'
-require 'irb/ext/save-history'
+# http://linux.die.net/man/1/irb
 
-ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
-IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history" 
+load "/etc/irbrc"
+load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
 
-Wirble.init
-Wirble.colorize
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
-extend Hirb::Console
-Hirb.enable :pager => false
-Hirb.enable :formatter => false
+# Allow using these gems without adding them to bundler
+$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/hirb-0.3.4/lib"
+$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/awesome_print-0.2.1/lib"
+$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/wirble-0.1.3/lib"
 
-class Object
-  # get all the methods for an object that aren't basic methods from Object
-  def my_methods
-    (methods - Object.instance_methods).sort
+# begin
+#   require "wirble"
+#   Wirble.init
+#   Wirble.colorize
+# rescue LoadError => e
+#   $stderr.puts e.message
+# end
+
+begin
+  require "ap"
+  module Kernel
+    def ap(object, options = {})
+      puts object.ai(
+        :indent => -2,
+        :color => {
+          :array      => :white,
+          :bignum     => :green,
+          :class      => :yellow,
+          :date       => :green,
+          :falseclass => :white,
+          :fixnum     => :green,
+          :float      => :green,
+          :hash       => :white,
+          :nilclass   => :white,
+          :string     => :green,
+          :symbol     => :cyan,
+          :time       => :green,
+          :trueclass  => :green
+        }
+      )
+    end
   end
-end
-
-# from http://themomorohoax.com/2009/03/27/irb-tip-load-files-faster
-def ls
-  %x{ls}.split("\n")
-end
-
-def cd(dir)
-  Dir.chdir(dir)
-  Dir.pwd
-end
-
-def pwd
-  Dir.pwd
-end
-
-# alias p pp
-# alias quit exit
-
-def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
-end
- 
-def show_log
-  change_log(STDOUT)
-end
- 
-def hide_log
-  change_log(nil)
-end
-
-# Shortcuts / aliases
-
-def l!; show_log end
-def r!; reload! end
-
-def i!
-  case File.basename(RAILS_ROOT).downcase.to_sym
-  when :mytime
-    User.current_user = User.find_by_login("SIMANRAI")
-    User.current_employee = User.current_user.employee
-    User.current_org_id = User.current_user.select_current_responsibility.org_id
-    User.current_payroll_id = User.current_user.employee.payroll_id
-  when :crmdata
-    User.current_user = User.find_by_login("SIMANRAI")
-    User.current_responsibility = User.current_user.active_responsibilities.first
+  IRB::Irb.class_eval do
+    def output_value
+      ap @context.last_value
+    end
   end
+rescue LoadError => e
+  $stderr.puts e.message
 end
 
-def t(data, *fields)
-  if fields.empty?
-    table data
-  else
-    table data, :fields => fields
-  end
-end
-
-def establish_connection(name=nil)
-  ActiveRecord::Base.establish_connection(name)
-end
-
-def connection
-  ActiveRecord::Base.connection
-end
-
-# >> sql "select * from addresses_v where rownum < 3"
-# +------+-----------+-----------+-------------+-----------+
-# | code | id        | name      | name_sorted | parent_id |
-# +------+-----------+-----------+-------------+-----------+
-# | 104  | 100003124 | Balvi     | Balvi       | 100015741 |
-# | 104  | 100003060 | Ventspils | Ventspils   | 100000000 |
-# +------+-----------+-----------+-------------+-----------+
-# 2 rows in set
-# => true
-def sql(query)
-  table connection.select_all(query)
-end
-
-# >> nls
-# +-------------------------+------------------------------+
-# | parameter               | value                        |
-# +-------------------------+------------------------------+
-# | NLS_LANGUAGE            | LATVIAN                      |
-# | NLS_TERRITORY           | LATVIA                       |
-# ...
-# +-------------------------+------------------------------+
-# 19 rows in set
-# => true
-def nls
-  sql "select * from v$nls_parameters"
-end
-
-# >> ddl :feedbacks
-# CREATE TABLE "FEEDBACKS"
-# ...
-# => true
-def ddl(name, type = :table)
-  type = type.to_s.upcase
-  schema, name = name.to_s.upcase.split('.').reverse
-  query = "SELECT DBMS_METADATA.GET_DDL('#{[type, name, schema].compact.join(%{', '})}') FROM DUAL"
-  printf connection.select_value(query)
-  true
-end
-
-# >> desc :xxcrm_feedbacks
-# +----------------+----------------+----------+-------+-------+-------+---------+---------+
-# | name           | sql_type       | type     | limit | scale | null  | primary | default |
-# +----------------+----------------+----------+-------+-------+-------+---------+---------+
-# | id             | NUMBER(38)     | integer  | 38    | 0     | false |         |         |
-# | feedback_type  | VARCHAR2(16)   | string   | 16    |       | true  |         |         |
-# ...
-# +----------------+----------------+----------+-------+-------+-------+---------+---------+
-# 10 rows in set
-# => true
-def desc(name)
-  table connection.columns(name), {
-    :fields => [ :name, :sql_type, :type, :limit, :scale, :null, :primary, :default ]
-  }
-  true
-end
-
-# >> explain "select * from feedbacks"
-# EXPLAIN PLAN FOR select * from feedbacks
-# Plan hash value: 4248182647
-# 
-# -------------------------------------------------------------------------------
-# | Id  | Operation         | Name      | Rows  | Bytes | Cost (%CPU)| Time     |
-# -------------------------------------------------------------------------------
-# |   0 | SELECT STATEMENT  |           |     8 |  6080 |     5   (0)| 00:00:01 |
-# |   1 |  TABLE ACCESS FULL| FEEDBACKS |     8 |  6080 |     5   (0)| 00:00:01 |
-# -------------------------------------------------------------------------------
-# 
-# Note
-# -----
-#    - dynamic sampling used for this statement
-# => true
-def explain(query)
-  explain_query = "EXPLAIN PLAN FOR #{query}"
-  display_query = "SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)"
-  connection.execute(explain_query)
-  puts explain_query
-  connection.select_values(display_query).each do |line|
-    puts line
-  end
-  true
+begin
+  require "hirb"
+  extend Hirb::Console
+  Hirb.enable :pager => false
+  Hirb.enable :formatter => false
+rescue LoadError => e
+  $stderr.puts e.message
 end

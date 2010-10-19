@@ -44,6 +44,7 @@ alias gs='git status'
 alias gst='git status'
 alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | awk '{print \$3}' | xargs git rm"
 function ga { git add ${*:-.}; }
+alias gl='git log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all'
 
 # svn
 alias s='svn'
@@ -52,8 +53,25 @@ alias si='svn commit'
 alias sci='svn commit'
 
 # rails
-alias sc='script/console'
-alias ss='script/server'
+function sc() {
+  if [ -x script/rails ]; then
+    script/rails console
+  elif [ -x script/console ]; then
+    script/console
+  else
+    echo "no script/rails or script/console found" >&2
+  fi
+}
+
+function ss() {
+  if [ -x script/rails ]; then
+    script/rails server
+  elif [ -x script/server ]; then
+    script/server
+  else
+    echo "no script/rails or script/server found" >&2
+  fi
+}
 alias sg='script/generate'
 alias sd='script/destroy'
 alias tlog='tail -f log/development.log'
