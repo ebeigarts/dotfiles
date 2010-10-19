@@ -1,0 +1,28 @@
+#!/usr/bin/env macruby
+
+framework 'Quartz'
+
+Dir.glob(File.expand_path('*.pdf')).each do |file_path|
+  url = NSURL.fileURLWithPath(file_path)
+  pdf = PDFDocument.alloc.initWithURL(url)
+  next unless pdf
+  # puts "Loaded PDF from: \"#{file_path}\""
+  page = pdf.pageAtIndex(0)
+  # puts page.inspect
+  title = page.loadTextChars.quickString.dup
+  title.gsub!(/[^\w\'\-]/, " ")
+  title.gsub!(/\s*Release \d+.*/i, "")
+  title.gsub!(/Oracle(r|R| r) /i, "Oracle ")
+  title.gsub!(/Human Resources Management Systems?/, "HRMS")
+  title.gsub!(/\s+/, " ")
+  title.strip!
+  puts title
+  begin
+    File.rename(file_path, "#{title}.pdf")
+  rescue
+    puts "*WARNING*: Cannot rename"
+  end
+end
+
+puts "Done"
+

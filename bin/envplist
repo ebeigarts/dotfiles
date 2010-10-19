@@ -1,0 +1,45 @@
+#!/usr/bin/python
+
+### environmentPlist.py
+### Generate ~/.MacOSX/environment.plist from symbols in
+### current environment. Copyright 2004 by Steve Beisner
+### Any use is allowed as long as this notice is retained.
+
+import os
+
+### The complete path for the current user's "environment.plist" file
+dirName = os.path.join( os.environ['HOME'], '.MacOSX')
+fileName = os.path.join( dirName, 'environment.plist')
+
+### make sure directory exists.
+if not os.path.exists( dirName):
+  os.mkdir( dirName )
+
+### XML template for the overall structure of the file "environment.plist".
+fileTemplate = """\
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+%s
+</dict>
+</plist>
+"""
+
+#### XML Template for a single name/value pair
+itemTemplate = """\
+<key>%s</key>
+<string>%s</string>
+"""
+
+### Build the body: text containing the xml for all
+### symbols in the environment.
+body = ""
+for key in os.environ.keys():
+  body += itemTemplate % ( key, os.environ[key] )
+
+### Create new environment.plist file for all
+### the environment symbols.
+file = open( fileName, 'w')
+file.write( fileTemplate % body )
+file.close()

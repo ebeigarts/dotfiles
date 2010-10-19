@@ -5,26 +5,26 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE].include? file
-    
-    if File.exist?(File.join(ENV['HOME'], ".#{file}"))
+    target_name = file == "bin" ? file : ".#{file}"
+    if File.exist?(File.join(ENV['HOME'], target_name))
       if replace_all
-        replace_file(file)
+        replace_file(file, target_name)
       else
-        print "overwrite ~/.#{file}? [ynaq] "
+        print "overwrite ~/#{target_name}? [ynaq] "
         case $stdin.gets.chomp
         when 'a'
           replace_all = true
-          replace_file(file)
+          replace_file(file, target_name)
         when 'y'
-          replace_file(file)
+          replace_file(file, target_name)
         when 'q'
           exit
         else
-          puts "skipping ~/.#{file}"
+          puts "skipping ~/#{target_name}"
         end
       end
     else
-      link_file(file)
+      replace_file(file, target_name)
     end
   end
   system "gem install hirb -v 0.3.4"
@@ -32,12 +32,8 @@ task :install do
   system "gem install wirble -v 0.1.3"
 end
 
-def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file}"}
-  link_file(file)
-end
-
-def link_file(file)
-  puts "linking ~/.#{file}"
-  system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+def replace_file(file, target_name)
+  system %Q{rm -rf "$HOME/#{target_name}"}
+  puts "linking ~/#{target_name}"
+  system %Q{ln -s "$PWD/#{file}" "$HOME/#{target_name}"}
 end

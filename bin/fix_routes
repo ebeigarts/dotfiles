@@ -1,0 +1,14 @@
+#!/bin/sh
+
+GW=$(netstat -rn | grep default | grep en1 | awk '{ print $2 }')
+
+echo "* Routing external traffic through $GW"
+
+sudo route delete 92.240.68.39
+sudo route add 92.240.68.39 $GW
+sudo route delete 194.19.227.130
+sudo route add 194.19.227.130 $GW
+sudo route delete 159.148.55.133
+sudo route add 159.148.55.133 $GW 
+sudo route delete 159.148.55.132
+sudo route add 159.148.55.132 $GW

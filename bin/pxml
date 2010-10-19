@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "nokogiri"
+
+puts Nokogiri::XML.parse(File.read(ARGV[0]))
+
+exit 0
