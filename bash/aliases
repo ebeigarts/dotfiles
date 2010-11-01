@@ -55,9 +55,9 @@ alias sci='svn commit'
 # rails
 function sc() {
   if [ -x script/rails ]; then
-    script/rails console
+    script/rails console $*
   elif [ -x script/console ]; then
-    script/console
+    script/console $*
   else
     echo "no script/rails or script/console found" >&2
   fi
@@ -65,9 +65,9 @@ function sc() {
 
 function ss() {
   if [ -x script/rails ]; then
-    script/rails server
+    script/rails server $*
   elif [ -x script/server ]; then
-    script/server
+    script/server $*
   else
     echo "no script/rails or script/server found" >&2
   fi
