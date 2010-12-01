@@ -8,6 +8,8 @@
 [core]
   editor = mate -w
   excludesfile = ~/.gitignore
+[branch]
+  autosetuprebase = always
 [color]
   status = auto
   branch = auto

@@ -4,8 +4,9 @@ _scm_info() {
     local r=$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )
     s="r$r"
   else
-    local b=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* //'`
+    local b=`git symbolic-ref HEAD 2> /dev/null`
     if [[ -n "${b}" ]] ; then
+      b=${b##refs/heads/}
       # dirty?
       if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
         s="$b *" 
