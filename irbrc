@@ -1,7 +1,7 @@
 # http://linux.die.net/man/1/irb
 
 load "/etc/irbrc"
-load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
+load File.dirname(__FILE__) + '/.railsrc' if $0 == 'script/rails' || ($0 == 'irb' && ENV['RAILS_ENV'])
 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
