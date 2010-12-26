@@ -1,22 +1,52 @@
 # http://linux.die.net/man/1/irb
 
-load "/etc/irbrc"
-load File.dirname(__FILE__) + '/.railsrc' if $0 == 'script/rails' || ($0 == 'irb' && ENV['RAILS_ENV'])
-
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
+
+# Check if RVM hasn't already loaded some history.
+if Readline::HISTORY.size == 0
+  histfile = File.expand_path(".irb-history", ENV["HOME"])
+
+  if File.exists?(histfile)
+    lines = IO.readlines(histfile).collect { |line| line.chomp }
+    Readline::HISTORY.push("") if Readline::VERSION == "EditLine wrapper" # OS X native ruby?
+    Readline::HISTORY.push(*lines)
+  end
+  Kernel::at_exit do
+    maxhistsize = 100
+    histfile = File::expand_path(".irb-history", ENV["HOME"])
+    lines = Readline::HISTORY.to_a.reverse.uniq.reverse
+    lines = lines[-maxhistsize, maxhistsize] if lines.compact.length > maxhistsize
+    File::open(histfile, "w+") { |io| io.puts lines.join("\n") }
+  end
+end
+
+# Remove duplicates in history
+module Readline
+  alias :old_readline :readline
+  def readline(*args)
+    line = old_readline(*args)
+    # Check history for duplicates
+    dups = []
+    Readline::HISTORY.each_with_index do |l, i|
+      dups << i if l == line
+    end
+    dups.reverse!
+    dups.each do |i|
+      i += 1 if Readline::VERSION == "EditLine wrapper" # OS X native ruby?
+      Readline::HISTORY.delete_at(i)
+    end
+    # File.open("#{ENV['HOME']}/.irb-history", 'ab') { |f| f << "#{line}\n" }
+    line
+  end
+end
+
+def history
+  Readline::HISTORY.to_a
+end
 
 # Allow using these gems without adding them to bundler
 $LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/hirb-0.3.5/lib"
 $LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/awesome_print-0.3.1/lib"
-$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/wirble-0.1.3/lib"
-
-# begin
-#   require "wirble"
-#   Wirble.init
-#   Wirble.colorize
-# rescue LoadError => e
-#   $stderr.puts e.message
-# end
 
 begin
   require "ap"
@@ -47,7 +77,7 @@ begin
       ap @context.last_value
     end
   end
-rescue LoadError => e
+rescue LoadError, NameError => e
   $stderr.puts e.message
 end
 
@@ -59,3 +89,5 @@ begin
 rescue LoadError => e
   $stderr.puts e.message
 end
+
+load File.dirname(__FILE__) + '/.railsrc' if $0 == 'script/rails' || ($0 == 'irb' && ENV['RAILS_ENV'])
