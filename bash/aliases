@@ -39,12 +39,6 @@ alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | 
 function ga { git add ${*:-.}; }
 alias gl='git log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all'
 
-# svn
-alias s='svn'
-alias sl='svn up'
-alias si='svn commit'
-alias sci='svn commit'
-
 # rails
 function _rails() {
   local command=$1;
