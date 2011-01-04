@@ -46,27 +46,22 @@ alias si='svn commit'
 alias sci='svn commit'
 
 # rails
-function sc() {
+function _rails() {
+  local command=$1;
+  shift;
   if [ -x script/rails ]; then
-    script/rails console $*
-  elif [ -x script/console ]; then
-    script/console $*
+    script/rails $command $*
+  elif [ -x script/$command ]; then
+    script/$command $*
   else
-    echo "no script/rails or script/console found" >&2
+    echo "no script/rails or script/$command found" >&2
   fi
 }
+alias sc='_rails console'
+alias ss='_rails server'
+alias sg='_rails generate'
+alias sd='_rails destroy'
 
-function ss() {
-  if [ -x script/rails ]; then
-    script/rails server $*
-  elif [ -x script/server ]; then
-    script/server $*
-  else
-    echo "no script/rails or script/server found" >&2
-  fi
-}
-alias sg='script/generate'
-alias sd='script/destroy'
 alias tlog='tail -f log/development.log'
 
 # sqlplus with readline
