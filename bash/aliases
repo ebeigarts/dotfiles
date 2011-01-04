@@ -1,14 +1,10 @@
 # changing directory to code project
 function c { cd ~/code/$1; }
-function h { cd ~/$1; }
 
 # misc
 alias reload='. ~/.bash_profile'
 alias quit='exit'
 alias ..='cd ..'
-alias up='cd ..'
-# alias t='tail -F -n 100'
-alias e='echo'
 
 # kill
 alias k='kill'
@@ -18,7 +14,6 @@ function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 
 # textmate
 function m { mate ${*:-.}; }
-function cm { cd ~/code/$1; mate .; }
 
 # ls
 alias l='ls -1'
@@ -34,8 +29,6 @@ alias gd='git diff'
 alias gds='git diff --stat'
 alias gdc='git diff --cached'
 alias gdcs='git diff --cached --stat'
-alias gdp='git diff master~1'
-alias gdps='git diff --stat master~1'
 alias gc='git commit'
 alias gci='git commit'
 alias gco='git checkout'
@@ -75,29 +68,6 @@ function ss() {
 alias sg='script/generate'
 alias sd='script/destroy'
 alias tlog='tail -f log/development.log'
-alias migrate='rake db:migrate db:test:clone'
-alias rst='touch tmp/restart.txt'
-
-# commands starting with % for pasting from web
-alias %=' '
-
-# jruby, jrails
-alias j='jruby -S'
-alias jss='jruby ./script/server'
-alias jsc='jruby ./script/console'
-
-# gc rails
-alias gcruby='/Users/edgarsbeigarts/rubygc/bin/ruby'
-alias gcrake='/Users/edgarsbeigarts/rubygc/bin/rake'
-alias gcgem='/Users/edgarsbeigarts/rubygc/bin/gem'
-alias gcirb='/Users/edgarsbeigarts/rubygc/bin/irb'
-alias gcrails='/Users/edgarsbeigarts/rubygc/bin/rails'
-
-# proxy
-alias psudo='sudo env http_proxy=http://proxy.alise.lv:8080'
-alias p='echo $http_proxy'
-alias pon='export http_proxy=http://proxy.alise.lv:8080'
-alias poff='unset http_proxy'
 
 # sqlplus with readline
 alias sqlplus="rlwrap sqlplus"
