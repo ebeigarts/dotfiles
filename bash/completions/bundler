@@ -1,0 +1,10 @@
+_bundle_open()
+{
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    local gemlist=$(bundle show | grep '*' | awk '{ print $2 }')
+    COMPREPLY=($(compgen -W "$gemlist" -- $curw));
+    return 0
+}
+complete -o default -F _bundle_open bundle open
