@@ -1,1 +1,0 @@
-launchctl load -w /Users/be/code/homebrew/Cellar/mongodb/1.2.2-x86_64/org.mongodb.mongod.plist
