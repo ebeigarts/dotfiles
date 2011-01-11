@@ -1,60 +1,12 @@
 #!/usr/bin/env ruby
 
-REMOTE = "nekaz@core.wb4.lv:/home/nekaz/backups/mac/"
-# REMOTE = "#{ENV['HOME']}/Dropbox/Backup/"
-
-DIRS = {
-  "#{ENV['HOME']}" => "home"
-}
-
-EXCLUDES = [
-  "~",
-  ".DS_Store",
-  ".Trash",
-  "tmp/*",
-  "log/*",
-  "logs/*",
-  "cache/*",
-  "*.log",
-  ".svn",
-  ".rvm",
-  ".gem/ruby/1.8/bin",
-  ".gem/ruby/1.8/cache",
-  ".gem/ruby/1.8/doc",
-  ".gem/ruby/1.8/gems",
-  ".dropbox",
-  "homebrew/Cellar/*/*",
-  "Downloads/*",
-  "Dropbox",
-  "Library/PubSub/Feeds",
-  "Library/Caches",
-  "Library/Logs",
-  "Library/VirtualBox",
-  "Library/Mail/IMAP-*",
-  "Library/Application Support/Lotus Notes Data",
-  "Library/Application Support/NetNewsWire/Feeds.noindex/*",
-  "Library/Application Support/Transmission",
-  "Library/Application Support/Google",
-  "Library/iTunes/iPhone Software Updates",
-  "Music/iTunes/iTunes Media/Music",
-  "Music/iTunes/Album Artwork",
-  "Music/iTunes/iTunes Media",
-  "Pictures",
-  "Movies",
-  "Documents/Books/Oracle",
-  "efoto/public/pictures/0000",
-  ".git/*",
-  # Ignore sphinx indexes
-  "*.spa", "*.spp", "*.spi", "*.sph", "*.spd", "*.spm", "*.spl",
-].map { |v| "--exclude '#{v}'" }.join(" ")
-
-RSYNC_OPTS = "-azv --progress --delete --delete-excluded"
-RSYNC = '/usr/bin/rsync'
-
-DIRS.each do |local_dir, remote_dir|
-  puts "Syncing: #{local_dir} -> #{remote_dir}"
-
-  cmd = "#{RSYNC} #{RSYNC_OPTS} #{EXCLUDES} #{local_dir} #{REMOTE}#{remote_dir}/"
-  puts "Executing: #{cmd}"
+def sync(path, options = {})
+  cmd = "rsync -azv --progress --delete #{'--relative' if options[:relative]} #{path} #{ENV['HOME']}/Dropbox"
+  puts cmd
   system cmd
 end
+
+sync ".ssh", :relative => true
+sync ".gem/credentials", :relative => true
+sync ".gitconfig", :relative => true
+sync "Library/Keychains/login.keychain"
