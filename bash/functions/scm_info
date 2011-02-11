@@ -15,6 +15,6 @@ _scm_info() {
       fi
     fi
   fi
-  s="${s:+${s} }"
+  s="${s:+ ${s}}"
   printf "$s"
 }

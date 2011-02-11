@@ -23,7 +23,8 @@ source ~/.bash/paths
 
 # prompt: [ root ~ master +? ] % cmd
 _user_root() { [ $USER == "root" ] && printf 'root '; }
-export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[34;1m\] \$(_scm_info)\[\e[0m\]]\[\e[32;1m\] %\[\e[0m\] "
+_rvm_prompt() { local s=$(rvm-prompt v g); printf "${s:+ ${s}}"; }
+export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[35;1m\]\w\[\e[33;1m\]\$(_rvm_prompt)\[\e[34;1m\]\$(_scm_info)\[\e[0m\] ]\[\e[32;1m\] %\[\e[0m\] "
 
 export PATH=$HOME/bin:$HOME/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
 export EDITOR="mate -w"
