@@ -64,5 +64,6 @@ alias tlog='tail -f log/development.log'
 # sqlplus with readline
 alias sqlplus="rlwrap sqlplus"
 
-# newtab
-alias t='osascript ~/.bash/scripts/newtab.scpt `pwd` > /dev/null'
+# vi
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
