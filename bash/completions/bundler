@@ -7,4 +7,4 @@ _bundle_open()
     COMPREPLY=($(compgen -W "$gemlist" -- $curw));
     return 0
 }
-complete -o default -F _bundle_open bundle open
+complete -o default -F _bundle_open bundle
