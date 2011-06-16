@@ -5,7 +5,7 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.md LICENSE].include? file
-    target_name = file == "bin" ? file : ".#{file}"
+    target_name = %[bin login.sql].include?(file) ? file : ".#{file}"
     if File.exist?(File.join(ENV['HOME'], target_name))
       if replace_all
         replace_file(file, target_name)
@@ -30,6 +30,8 @@ task :install do
   system "gem install hirb -v 0.3.5"
   system "gem install awesome_print -v 0.3.2"
 end
+
+task :default => :install
 
 def replace_file(file, target_name)
   system %Q{rm -rf "$HOME/#{target_name}"}
