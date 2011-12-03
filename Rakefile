@@ -28,7 +28,7 @@ task :install do
     end
   end
   system "gem install hirb -v 0.3.5"
-  system "gem install awesome_print -v 0.3.2"
+  system "gem install awesome_print -v 1.0.1"
 end
 
 task :default => :install

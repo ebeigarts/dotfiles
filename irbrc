@@ -46,7 +46,7 @@ end
 
 # Allow using these gems without adding them to bundler
 $LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/hirb-0.3.5/lib"
-$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/awesome_print-0.3.2/lib"
+$LOAD_PATH << "#{ENV['HOME']}/.gem/ruby/1.8/gems/awesome_print-1.0.1/lib"
 
 begin
   require "ap"

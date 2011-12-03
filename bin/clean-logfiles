@@ -1,3 +1,4 @@
 #!/bin/sh
 
-find . -regex '.*\.log' | xargs rm
+find . -regex 'development\.log' | xargs rm
+find . -regex 'test\.log' | xargs rm

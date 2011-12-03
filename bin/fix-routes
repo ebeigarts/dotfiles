@@ -1,14 +1,38 @@
 #!/bin/sh
 
-GW=$(netstat -rn | grep default | grep en1 | head -n 1 | awk '{ print $2 }')
+GW=$(netstat -rn | grep default | grep -E '(en1|en2)' | head -n 1 | awk '{ print $2 }')
 
 echo "* Routing external traffic through $GW"
 
 sudo route delete 92.240.68.39
-sudo route add 92.240.68.39 $GW
+sudo route add    92.240.68.39 $GW
+sudo route delete 85.31.101.151
+sudo route add    85.31.101.151 $GW
+sudo route delete 178.79.179.38
+sudo route add    178.79.179.38 $GW
 sudo route delete 194.19.227.130
-sudo route add 194.19.227.130 $GW
+sudo route add    194.19.227.130 $GW
 sudo route delete 159.148.55.133
-sudo route add 159.148.55.133 $GW 
+sudo route add    159.148.55.133 $GW
 sudo route delete 159.148.55.132
-sudo route add 159.148.55.132 $GW
+sudo route add    159.148.55.132 $GW
+
+# smtp.gmail.com, imap.gmail.com
+sudo route delete 209.85.173.109
+sudo route add    209.85.173.109 $GW
+sudo route delete 209.85.227.109
+sudo route add    209.85.227.109 $GW
+sudo route delete 74.125.43.109
+sudo route add    74.125.43.109 $GW
+sudo route delete 74.125.77.109
+sudo route add    74.125.77.109 $GW
+sudo route delete 74.125.79.109
+sudo route add    74.125.79.109 $GW
+sudo route delete 74.125.39.109
+sudo route add    74.125.39.109 $GW
+sudo route delete 74.125.43.108
+sudo route add    74.125.43.108 $GW
+
+# last.fm
+sudo route delete 195.24.232.203
+sudo route add    195.24.232.203 $GW

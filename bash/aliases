@@ -59,7 +59,7 @@ alias ss='_rails server'
 alias sg='_rails generate'
 alias sd='_rails destroy'
 
-alias tlog='tail -f log/development.log'
+alias tlog='tail -f log/development.log log/test.log'
 
 # sqlplus with readline
 alias sqlplus="rlwrap sqlplus"
