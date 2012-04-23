@@ -10,3 +10,5 @@ if [ -s ~/.rvm/scripts/rvm ] ; then
   # Force rvm to reload when iTerm2 "Resuse Previous Tab's Directory" is turned on
   cd .
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
