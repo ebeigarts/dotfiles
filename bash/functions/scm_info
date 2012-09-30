@@ -7,8 +7,9 @@ _scm_info() {
     local b=`git symbolic-ref HEAD 2> /dev/null`
     if [[ -n "${b}" ]] ; then
       b=${b##refs/heads/}
-      # dirty?
-      if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
+      if [[ -d .git/rebase-apply || -d .git/rebase-merge ]]; then
+        s="$b <"
+      elif [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
         s="$b *" 
       else
         s="$b"
