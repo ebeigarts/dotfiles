@@ -15,6 +15,9 @@ function ka9 { kill -9 $(ps xc | grep -wi "$*" | awk '{print $1}'); }
 # textmate
 function m { mate ${*:-.}; }
 
+# sublime text 2
+function s { subl -n ${*:-.}; }
+
 # ls
 alias l='ls -1'
 alias ll='ls -lh'
