@@ -58,6 +58,7 @@ export SQLPATH=$HOME
 
 ### Java
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+export JAVA_OPTS="-d32 -Xmx1024m -XX:MaxPermSize=384m"
 
 ### Homebrew
 export PATH=$HOME/.homebrew/sbin:$HOME/.homebrew/bin:$PATH
