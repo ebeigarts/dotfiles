@@ -1,19 +1,14 @@
 _scm_info() {
   local s=
-  if [[ -d ".svn" ]] ; then
-    local r=$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )
-    s="r$r"
-  else
-    local b=`git symbolic-ref HEAD 2> /dev/null`
-    if [[ -n "${b}" ]] ; then
-      b=${b##refs/heads/}
-      if [[ -d .git/rebase-apply || -d .git/rebase-merge ]]; then
-        s="$b <"
-      elif [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
-        s="$b *" 
-      else
-        s="$b"
-      fi
+  local b=`git symbolic-ref HEAD 2> /dev/null`
+  if [[ -n "${b}" ]] ; then
+    b=${b##refs/heads/}
+    if [[ -d .git/rebase-apply || -d .git/rebase-merge ]]; then
+      s="$b <"
+    elif [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]]; then
+      s="$b *"
+    else
+      s="$b"
     fi
   fi
   s="${s:+ ${s}}"
