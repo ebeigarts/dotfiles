@@ -3,7 +3,6 @@
 .~*
 sqlnet.log
 mkmf.log
-TODO
-TODO.*
+TODO.md
 .rvmrc
 .powenv
