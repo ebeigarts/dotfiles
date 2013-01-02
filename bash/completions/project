@@ -1,24 +1,12 @@
-#!/usr/bin/ruby
+#!/bin/bash
 
-class ProjectCompletion
-  def initialize(command)
-    @command = command
-  end
-  
-  def matches
-    projects.select do |task|
-      task[0, typed.length] == typed
-    end
-  end
-  
-  def typed
-    @command[/\s(.+?)$/, 1] || ''
-  end
-  
-  def projects
-    `ls ~/code/`.split
-  end
-end
-
-puts ProjectCompletion.new(ENV["COMP_LINE"]).matches
-exit 0
+_projects()
+{
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    local projects=$(ls -1 ~/code)
+    COMPREPLY=($(compgen -W "$projects" -- $curw));
+    return 0
+}
+complete -o default -F _projects c
