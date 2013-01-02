@@ -1,13 +1,9 @@
-Edgars Beigarts dotfiles
-------------------------
+My dotfiles
+-----------
 
 These are config files to set up a system the way I like it.
 
 ## Installation
-
-    git clone http://github.com/defunkt/dotjs
-    cd dotjs
-    sudo rake install
 
     git clone git://github.com/ebeigarts/dotfiles ~/.dotfiles
     cd ~/.dotfiles
