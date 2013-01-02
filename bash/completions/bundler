@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _bundle_open()
 {
     local curw
