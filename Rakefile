@@ -27,8 +27,8 @@ task :install do
       replace_file(file, target_name)
     end
   end
-  system "gem install hirb -v 0.3.5"
-  system "gem install awesome_print -v 1.0.1"
+  system "GEM_HOME=~/.gem/ruby/1.8 gem install hirb -v 0.7.0 --no-ri --no-rdoc"
+  system "GEM_HOME=~/.gem/ruby/1.8 gem install awesome_print -v 1.1.0 --no-ri --no-rdoc"
 end
 
 task :default => :install
