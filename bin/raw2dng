@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for f in "$@"; do
+  echo "* Converting '$f' to DNG"
+  /Applications/Adobe\ DNG\ Converter.app/Contents/MacOS/Adobe\ DNG\ Converter "$f" &&
+  exiftool '−DateTimeOriginal>FileModifyDate' "${f%.*}.dng" &&
+  trash "$f"
+done
