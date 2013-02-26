@@ -50,7 +50,9 @@ alias wget='wget --no-check-certificate'
 function _rails() {
   local command=$1;
   shift;
-  if [ -x script/rails ]; then
+  if [ -x bin/rails ]; then
+    bin/rails $command $*
+  elif [ -x script/rails ]; then
     script/rails $command $*
   elif [ -x script/$command ]; then
     script/$command $*
