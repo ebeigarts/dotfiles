@@ -31,6 +31,10 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
 
+### LOCALE
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 ### COLORS
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
