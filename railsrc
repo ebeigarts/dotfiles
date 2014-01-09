@@ -6,6 +6,9 @@ def l!(stream = STDOUT)
   if defined?(Mongoid)
     Mongoid.logger = Logger.new(stream)
   end
+  if defined?(Moped)
+    Moped.logger = Logger.new(stream)
+  end
   true
 end
 

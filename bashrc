@@ -4,6 +4,9 @@
 
 source ~/.bash/config
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 if [ -s ~/.rvm/scripts/rvm ] ; then
   source ~/.rvm/scripts/rvm
 fi

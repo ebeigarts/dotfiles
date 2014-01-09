@@ -1,4 +1,5 @@
 #!/bin/sh
 
-find . -regex '.*development\.log' | xargs rm
-find . -regex '.*test\.log' | xargs rm
+find . -regex '.*development\.log' -exec rm {} \;
+find . -regex '.*test\.log' -exec rm {} \;
+find . -regex '.*tmp/miniprofiler/.+' -exec rm {} \;

@@ -18,12 +18,4 @@ rescue LoadError => e
   $stderr.puts e.message
 end
 
-if RUBY_PLATFORM == "java"
-  require "io/console"
-  class IO
-    def winsize
-    end
-  end
-end
-
 load "#{ENV['HOME']}/.railsrc" if $0 == 'script/rails' || ($0 == 'pry' && ENV['RAILS_ENV'])

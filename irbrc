@@ -32,7 +32,7 @@ module Readline
     end
     dups.reverse!
     dups.each do |i|
-      i += 1 if Readline::VERSION == "EditLine wrapper" # OS X native ruby?
+      # i += 1 if Readline::VERSION == "EditLine wrapper" # OS X native ruby?
       Readline::HISTORY.delete_at(i)
     end
     # File.open("#{ENV['HOME']}/.irb-history", 'ab') { |f| f << "#{line}\n" }
