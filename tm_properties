@@ -1,0 +1,28 @@
+theme            = 71D40D9D-AE48-11D9-920A-000D93589AF6
+fontName         = Monaco
+fontSize         = 13.000000
+showInvisibles   = true
+showWrapColumn   = true
+softTabs         = true
+tabSize          = 2
+wrapColumn       = 80
+
+# Includes and excludes
+include               = "{$include,.*}"
+exclude               = "{$exclude,.git,.DS_Store}"
+excludeInFolderSearch = "{$excludeInFolderSearch,log,tmp,*.sass-cache,coverage,node_modules,protected,uploads}"
+
+[ *.lock ]
+fileType         = text.plain
+
+[ .powenv ]
+fileType         = text.plain
+
+[ .rspec ]
+fileType         = text.plain
+
+[ .rvmrc ]
+fileType         = text.plain
+
+[ Procfile ]
+fileType         = source.yaml
