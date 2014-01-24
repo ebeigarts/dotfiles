@@ -14,6 +14,7 @@ wrapColumn       = 80
 include               = "{$include,.*}"
 exclude               = "{$exclude,.git,.DS_Store,*~}"
 excludeInFolderSearch = "{$excludeInFolderSearch,log,tmp,*.sass-cache,coverage,node_modules,protected,uploads}"
+excludeInFileChooser  = "{$excludeInFileChooser,log,tmp,*.sass-cache,coverage,node_modules,protected,uploads}"
 
 # Variables
 TM_RUBY          = "$HOME/bin/textmate_ruby"

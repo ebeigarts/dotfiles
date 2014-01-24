@@ -2,4 +2,10 @@
 
 find . -regex '.*development\.log' -exec rm {} \;
 find . -regex '.*test\.log' -exec rm {} \;
-find . -regex '.*tmp/miniprofiler/.+' -exec rm {} \;
+find . -regex '.*unicorn\..*\.log' -exec rm {} \;
+find . -regex '.*tmp/miniprofiler/.*' -exec rm -rf {} \;
+find . -regex '.*tmp/letter_opener/.*' -exec rm -rf {} \;
+find . -regex '.*tmp/sass-cache/.*' -exec rm -rf {} \;
+find . -regex '.*tmp/capybara/.*' -exec rm -rf {} \;
+find . -regex '.*tmp/cache/.*' -exec rm -rf {} \;
+find . -regex '.*uploads/tmp/.*' -exec rm -rf {} \;
