@@ -1,0 +1,6 @@
+#!/bin/bash
+
+open `
+  git config --get remote.origin.url |
+  ruby -pe '$_ = $_.sub(/\:/, "/").sub(/^git(@|\/\/\/)/, "https://").sub(/\.git$/, "")'
+`
