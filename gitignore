@@ -1,6 +1,7 @@
 .DS_Store
 *~
 .~*
+~*
 sqlnet.log
 mkmf.log
 TODO.md
