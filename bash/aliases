@@ -62,6 +62,11 @@ alias sc='_rails console'
 alias ss='_rails server'
 alias sg='_rails generate'
 alias sd='_rails destroy'
+alias rc='_rails console'
+alias rs='_rails server'
+alias rg='_rails generate'
+alias rd='_rails destroy'
+alias lm='ls db/migrate/* | tail -n1 | xargs mate'
 
 alias tlog='tail -f log/development.log log/test.log'
 
