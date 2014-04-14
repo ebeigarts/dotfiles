@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# http://blog.favo.org/post/31649090293/xcode-5-places-to-save-some-disk-space
+rm -rf ~/library/Developer/Xcode/DerivedData/*
+rm -rf ~/Library/Developer/Xcode/Archives/*
+rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*
+rm -rf ~/Library/Application\ Support/iPhone\ Simulator/*
+rm -rf ~/Library/Developer/Shared/Documentation/DocSets/*
+
+# clean mail downloads
+rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/*
+
+# clean code logfiles and tempfiles
+find ~/code -regex '.*development\.log' -exec rm {} \;
+find ~/code -regex '.*test\.log' -exec rm {} \;
+find ~/code -regex '.*unicorn\..*\.log' -exec rm {} \;
+find ~/code -regex '.*tmp/miniprofiler/.*' -exec rm -rf {} \;
+find ~/code -regex '.*tmp/letter_opener/.*' -exec rm -rf {} \;
+find ~/code -regex '.*tmp/sass-cache/.*' -exec rm -rf {} \;
+find ~/code -regex '.*tmp/capybara/.*' -exec rm -rf {} \;
+find ~/code -regex '.*tmp/cache/.*' -exec rm -rf {} \;
+find ~/code -regex '.*uploads/tmp/.*' -exec rm -rf {} \;
+
+# clean ruby bundles
+for f in ~/code/*; do [ -e $f/Gemfile ] && cd $f && bundle clean --force; done
