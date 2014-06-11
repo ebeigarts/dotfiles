@@ -9,6 +9,7 @@ showWrapColumn   = true
 softTabs         = true
 tabSize          = 2
 wrapColumn       = 80
+scmStatus        = false # Adding/Renaming files is buggy
 
 # Includes and excludes
 include               = "{$include,.*}"
