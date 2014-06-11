@@ -1,0 +1,43 @@
+'editor':
+  'fontSize': 14
+  'lineHeight': 1.5
+  'showInvisibles': true
+'core':
+  'themes': [
+    'atom-light-ui'
+    'atom-light-syntax'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'disabledPackages': [
+    'whitespace'
+    'welcome'
+    'language-rspec'
+  ]
+'exception-reporting':
+  'userId': '5d4c374d-930e-f430-09a9-2b853f663818'
+'release-notes':
+  'viewedVersion': '0.84.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '93502b042e225d375f200869bf82b200dd55333c'
+'tree-view':
+  'showOnRightSide': true
+'markdown-preview':
+  'grammars': [
+    'source.gfm'
+    'source.litcoffee'
+    'text.plain'
+    'text.plain.null-grammar'
+  ]
+'spell-check':
+  'grammars': [
+    'source.gfm'
+    'text.git-commit'
+    'text.plain'
+    'text.plain.null-grammar'
+  ]
