@@ -64,7 +64,7 @@ export SQLPATH=$HOME
 
 ### Java
 export JAVA_HOME=$(/usr/libexec/java_home)
-export JRUBY_OPTS="-J-Xmn128m -J-Xms256m -J-Xmx1024m -J-XX:MaxPermSize=512m -J-XX:ReservedCodeCacheSize=512M -J-XX:+TieredCompilation -J-Djruby.launch.inproc=true"
+export JRUBY_OPTS="--dev -J-Xmn128m -J-Xms256m -J-Xmx1024m -J-XX:MaxPermSize=512m -J-XX:ReservedCodeCacheSize=512M -J-XX:+TieredCompilation -J-Djruby.launch.inproc=true"
 export SBT_OPTS="-Xmn128m -Xms256m -Xmx1024m"
 
 ### Homebrew
