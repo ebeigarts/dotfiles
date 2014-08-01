@@ -64,4 +64,4 @@ rescue LoadError => e
   $stderr.puts e.message
 end
 
-load File.dirname(__FILE__) + '/.railsrc' if $0 == 'script/rails' || ($0 == 'irb' && ENV['RAILS_ENV'])
+load File.dirname(__FILE__) + '/.railsrc' if $0 == 'script/rails' || $0 == 'rails_console' || ($0 == 'irb' && ENV['RAILS_ENV'])

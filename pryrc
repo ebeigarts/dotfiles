@@ -18,4 +18,4 @@ rescue LoadError => e
   $stderr.puts e.message
 end
 
-load "#{ENV['HOME']}/.railsrc" if $0 == 'script/rails' || ($0 == 'pry' && ENV['RAILS_ENV'])
+load "#{ENV['HOME']}/.railsrc" if $0 == 'script/rails' || $0 == 'rails_console' || ($0 == 'pry' && ENV['RAILS_ENV'])
