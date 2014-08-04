@@ -1,0 +1,47 @@
+# Install native apps
+# Usage: `brew bundle Caskfile`
+
+install caskroom/cask/brew-cask
+
+# main apps
+cask install google-chrome
+cask install gpgtools
+cask install java
+cask install jumpcut
+cask install libreoffice
+cask install skype
+cask install the-unarchiver
+
+# storage apps
+cask install cloud
+cask install dropbox
+cask install google-drive
+cask install cyberduck
+cask install transmission
+
+# development apps
+cask install iterm2
+cask install textmate
+cask install atom
+cask install macvim
+cask install github
+cask install vagrant
+cask install virtualbox
+cask install sequel-pro
+cask install pgadmin3
+
+# image processing apps
+cask install seashore
+cask install imageoptim
+cask install skitch
+
+# music apps
+cask install lastfm
+cask install soundcleod
+cask install spotify
+
+# video apps
+cask install mplayerx
+cask install miro-video-converter
+cask install vlc
+cask install handbrake
