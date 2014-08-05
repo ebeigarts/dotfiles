@@ -40,27 +40,8 @@ def tsql(query)
   t sql(query)
 end
 
-def nls
-  tsql "select * from v$nls_parameters"
-end
-
 def explain(query)
-  explain_query = "EXPLAIN PLAN FOR #{query}"
-  display_query = "SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY)"
-  arb.connection.execute(explain_query)
-  puts explain_query
-  arb.connection.select_values(display_query).each do |line|
-    puts line
-  end
-  true
-end
-
-def ddl(name, type = :table)
-  type = type.to_s.upcase
-  schema, name = name.to_s.upcase.split('.').reverse
-  query = "SELECT DBMS_METADATA.GET_DDL('#{[type, name, schema].compact.join(%{', '})}') FROM DUAL"
-  printf arb.connection.select_value(query)
-  true
+  arb.connection.explain(query)
 end
 
 l!
