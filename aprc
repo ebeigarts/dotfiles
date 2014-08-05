@@ -1,0 +1,28 @@
+AwesomePrint.defaults = {
+  :color => {
+    # booleans
+    :nilclass   => :blueish,
+    :falseclass => :blueish,
+    :trueclass  => :blueish,
+
+    # numbers
+    :bigdecimal => :blueish,
+    :fixnum     => :blueish,
+    :float      => :blueish,
+    :rational   => :blueish,
+
+    # objects
+    :args       => :gray,
+    :array      => :gray,
+    :hash       => :gray,
+    :struct     => :gray,
+    :class      => :purpleish,
+    :date       => :purpleish,
+    :time       => :purpleish,
+    :method     => :purpleish,
+    :variable   => :purpleish,
+    :keyword    => :cyanish,
+    :string     => :greenish,
+    :symbol     => :redish,
+  }
+}
