@@ -1,9 +1,11 @@
 # defaults write com.macromates.TextMate.preview fileBrowserStyle SourceList
 # defaults write com.macromates.TextMate.preview fileBrowserOpenAnimationDisabled -bool YES
+# defaults write com.macromates.TextMate.preview fontLeadingDelta -float 2
+# defaults write com.macromates.TextMate.preview fontAscentDelta -float 2
 
-theme            = 71D40D9D-AE48-11D9-920A-000D93589AF6
-fontName         = Monaco
-fontSize         = 13.000000
+theme            = 82CCD69C-F1B1-4529-B39E-780F91F07604 # Tomorrow
+fontName         = Menlo
+fontSize         = 14.000000
 showInvisibles   = true
 showWrapColumn   = true
 softTabs         = true

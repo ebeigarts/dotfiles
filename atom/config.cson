@@ -5,7 +5,7 @@
 'core':
   'themes': [
     'atom-light-ui'
-    'atom-light-syntax'
+    'base16-tomorrow-light-theme'
   ]
   'ignoredNames': [
     '.git'
@@ -16,6 +16,8 @@
     'whitespace'
     'welcome'
     'language-rspec'
+    'linter-jshint'
+    'linter-xmllint'
   ]
 'exception-reporting':
   'userId': '5d4c374d-930e-f430-09a9-2b853f663818'
@@ -41,3 +43,7 @@
     'text.plain'
     'text.plain.null-grammar'
   ]
+'linter-coffeelint': {}
+'linter':
+  'lintOnChange': false
+  'lintOnEditorFocus': false
