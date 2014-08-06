@@ -20,3 +20,7 @@ These are config files to set up a system the way I like it.
 
 [Setup MacVim](https://github.com/carlhuda/janus)
 
+```
+mkdir -p ~/.vim/janus/vim/colors/tomorrow/colors
+curl https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim \
+  -o ~/.vim/janus/vim/colors/tomorrow/colors/Tomorrow.vim
