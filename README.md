@@ -9,6 +9,7 @@ These are config files to set up a system the way I like it.
 git clone git://github.com/ebeigarts/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
+./osx
 ```
 
 ## Post-installation
