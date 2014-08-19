@@ -12,6 +12,29 @@ rake install
 ./osx
 ```
 
+Install homebrew q
+
+```
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew bundle ~/.dotfiles/Brewfile
+brew bundle ~/.dotfiles/Caskfile
+```
+
+Install rvm
+
+```
+curl -sSL https://get.rvm.io | bash
+```
+
+Start services:
+
+```
+brew services start mongo
+brew services start mysql
+brew services start postgres
+brew services start redis
+```
+
 ## Post-installation
 
 [Setting user name, email and GitHub token](http://help.github.com/git-email-settings/)

@@ -31,7 +31,6 @@ install htop-osx
 install hub
 install iperf
 install isync
-install libiconv
 install libxml2
 install libxslt
 install libyaml
@@ -52,9 +51,7 @@ install pwgen
 install python
 install rename
 install rlwrap
-install rsync
 install tig
-install tiger-vnc
 install trash
 install tree
 install unrar
