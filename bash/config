@@ -26,7 +26,7 @@ _rvm_prompt() { local s=$(rvm-prompt v g); printf "${s:+ ${s}}"; }
 # Light theme
 export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[34;1m\]\w\[\e[30;1m\]\$(_rvm_prompt)\[\e[32;1m\]\$(_scm_info)\[\e[0m\] ]\[\e[31;1m\] %\[\e[0m\] "
 
-export PATH=./bin:$HOME/bin:$HOME/.gem/ruby/1.8/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
+export PATH=./bin:$HOME/bin:$HOME/.gem/ruby/2.0.0/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
 export EDITOR="mate -w"
 # stty erase ^H # brakes backspace in vim
 
@@ -44,7 +44,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 ### Ruby
-export GEM_HOME=$HOME/.gem/ruby/1.8
+export GEM_HOME=$HOME/.gem/ruby/2.0.0
 #export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000

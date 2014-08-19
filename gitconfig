@@ -3,6 +3,7 @@
   email = edgars.beigarts@makit.lv
 [alias]
   co = checkout
+	fetch-pr = "\"!f() { git fetch $1 refs/pull/$2/head:refs/remotes/pr/$2; }; f\""
 [apply]
   whitespace = nowarn
 [core]
@@ -30,3 +31,10 @@
   untracked = black bold
 [push]
 	default = simple
+[github]
+	user = ebeigarts
+[ghi]
+	token = db0852224cdae09627eb4487bb0de070a5ff126e
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

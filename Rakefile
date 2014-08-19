@@ -4,7 +4,7 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
-    next if %w[Rakefile README.md LICENSE].include? file
+    next if %w[Rakefile README.md LICENSE osx].include? file
     target_name = %[bin login.sql].include?(file) ? file : ".#{file}"
     if File.exist?(File.join(ENV['HOME'], target_name))
       if replace_all
@@ -27,8 +27,8 @@ task :install do
       replace_file(file, target_name)
     end
   end
-  system "GEM_HOME=~/.gem/ruby/1.8 gem install hirb -v 0.7.0 --no-ri --no-rdoc"
-  system "GEM_HOME=~/.gem/ruby/1.8 gem install awesome_print -v 1.1.0 --no-ri --no-rdoc"
+  system "GEM_HOM.gem/ruby/2.0.0/1.8 gem install hirb -v 0.7.0 --no-ri --no-rdoc"
+  system "GEM_HOM.gem/ruby/2.0.0/1.8 gem install awesome_print -v 1.1.0 --no-ri --no-rdoc"
 end
 
 task :default => :install
