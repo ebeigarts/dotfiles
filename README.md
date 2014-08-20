@@ -35,7 +35,7 @@ brew services start postgres
 brew services start redis
 ```
 
-[Confgirue git](http://help.github.com/git-email-settings/)
+[Configure git](http://help.github.com/git-email-settings/)
 
 ```bash
 git config --global user.name "your-name"
