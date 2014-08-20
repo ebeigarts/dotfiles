@@ -5,6 +5,7 @@ install caskroom/cask/brew-cask
 
 # main apps
 cask install google-chrome
+cask install firefox
 cask install gpgtools
 cask install java
 cask install jumpcut
