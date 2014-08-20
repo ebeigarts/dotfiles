@@ -13,6 +13,7 @@ cask install libreoffice
 cask install sizeup
 cask install skype
 cask install the-unarchiver
+cask install menumeters
 
 # storage apps
 cask install cloud
@@ -36,6 +37,8 @@ cask install pgadmin3
 cask install seashore
 cask install imageoptim
 cask install skitch
+cask install inkscape # requires xquartz
+cask install xquartz
 
 # music apps
 cask install lastfm
