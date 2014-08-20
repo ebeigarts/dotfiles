@@ -202,6 +202,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
+# Download a good Latvian keyboard layout
+# https://gist.github.com/ebeigarts/8241886
+mkdir -p ~/Library/Keyboard\ Layouts/ &&
+curl -L -o ~/Library/Keyboard\ Layouts/Latvian.keylayout http://cl.ly/1S223Y3S2U0f/download/Latvian_fixed.keylayout
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
@@ -235,10 +240,10 @@ defaults write com.apple.finder QuitMenuItem -bool true
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
-# Set Desktop as the default location for new Finder windows
+# Set Downloads as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Downloads/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -247,7 +252,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -664,14 +669,13 @@ defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -boo
 defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
 ###############################################################################
-# SizeUp.app                                                                  #
+# Textmate.app                                                                #
 ###############################################################################
 
-# Start SizeUp at login
-defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
-
-# Don’t show the preferences window on next start
-defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+defaults write com.macromates.TextMate.preview fileBrowserStyle SourceList
+defaults write com.macromates.TextMate.preview fileBrowserOpenAnimationDisabled -bool YES
+defaults write com.macromates.TextMate.preview fontLeadingDelta -float 2
+defaults write com.macromates.TextMate.preview fontAscentDelta -float 2
 
 ###############################################################################
 # Transmission.app                                                            #
