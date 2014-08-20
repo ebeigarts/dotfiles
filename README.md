@@ -35,15 +35,11 @@ brew services start postgres
 brew services start redis
 ```
 
-## Post-installation
-
-[Setting user name, email and GitHub token](http://help.github.com/git-email-settings/)
+[Confgirue git](http://help.github.com/git-email-settings/)
 
 ```bash
 git config --global user.name "your-name"
 git config --global user.email "your-email"
-git config --global github.user "your-github-username"
-git config --global github.token "your-github-token"
 ```
 
 [Setup MacVim](https://github.com/carlhuda/janus)
