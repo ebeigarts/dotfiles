@@ -33,6 +33,7 @@ brew services start mongo
 brew services start mysql
 brew services start postgres
 brew services start redis
+brew services start elasticsearch
 ```
 
 [Configure git](http://help.github.com/git-email-settings/)
