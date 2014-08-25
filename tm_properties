@@ -23,11 +23,11 @@ fileType         = text.plain
 [ "{Capfile,Gemfile,Gemfile.lock,Guardfile}" ]
 fileType         = source.ruby
 
-[ *.rb ]
+[ "*.{rb,rabl}" ]
 fileType         = source.ruby.rails
 
 [ *_spec.rb ]
 fileType         = source.ruby.rspec
 
-[ *.jst.hamlc ]
+[ *.hamlc ]
 fileType         = text.haml
