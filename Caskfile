@@ -10,7 +10,7 @@ cask install gpgtools
 cask install java
 cask install jumpcut
 cask install libreoffice
-cask install sizeup
+cask install spectacle
 cask install skype
 cask install the-unarchiver
 cask install menumeters
