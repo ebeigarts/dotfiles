@@ -50,3 +50,11 @@ mkdir -p ~/.vim/janus/vim/colors/tomorrow/colors
 curl https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim \
   -o ~/.vim/janus/vim/colors/tomorrow/colors/Tomorrow.vim
 ```
+
+Setup TextMate
+
+```
+mkdir -p ~/Library/Application\ Support/Avian/Bundles
+cd ~/Library/Application\ Support/Avian/Bundles
+git clone https://github.com/cucumber/cucumber-tmbundle Cucumber.tmbundle
+```

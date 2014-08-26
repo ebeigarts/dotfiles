@@ -3,6 +3,7 @@ fontName         = Menlo
 fontSize         = 14.000000
 showInvisibles   = true
 showWrapColumn   = true
+softWrap         = false
 softTabs         = true
 tabSize          = 2
 wrapColumn       = 80
@@ -17,6 +18,7 @@ excludeInFileChooser  = "{$excludeInFileChooser,log,tmp,*.sass-cache,coverage,no
 # Variables
 TM_RUBY          = "$HOME/bin/textmate_ruby"
 
+# File types
 [ "{.powenv,.rspec,.rvmrc,Procfile,.gitignore}" ]
 fileType         = text.plain
 
@@ -31,3 +33,12 @@ fileType         = source.ruby.rspec
 
 [ *.hamlc ]
 fileType         = text.haml
+
+[ text ]
+softWrap         = false
+
+[ text.html ]
+softWrap         = false
+
+[ text.html.markdown ]
+softWrap         = false
