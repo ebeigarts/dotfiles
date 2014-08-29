@@ -31,7 +31,6 @@ cask install github
 cask install vagrant
 cask install virtualbox
 cask install sequel-pro
-cask install pgadmin3
 
 # image processing apps
 cask install seashore
