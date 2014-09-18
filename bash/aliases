@@ -22,6 +22,7 @@ alias la='ls -lah'
 alias lh='ls -la | grep ":[0-9]* \."' # show only hidden files
 
 # git
+eval "$(hub alias -s)" > /dev/null 2>&1
 alias g='git'
 alias gpll='git pull'
 alias gpsh='git push'
