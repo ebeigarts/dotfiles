@@ -1,9 +1,8 @@
 [user]
-  name = Edgars Beigarts
-  email = edgars.beigarts@makit.lv
+  name = Edgars Beigart
+  email = edgars.beigarts@gmail.com
 [alias]
   co = checkout
-	fetch-pr = "\"!f() { git fetch $1 refs/pull/$2/head:refs/remotes/pr/$2; }; f\""
 [apply]
   whitespace = nowarn
 [core]
@@ -30,9 +29,9 @@
   changed = red bold # also deleted
   untracked = black bold
 [push]
-	default = simple
+  default = simple
 [github]
-	user = ebeigarts
+  user = ebeigarts
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

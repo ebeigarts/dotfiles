@@ -1,6 +1,8 @@
 # Install command-line tools using Homebrew
 # Usage: `brew bundle Brewfile`
 
+tap homebrew/science
+
 # Make sure we’re using the latest Homebrew
 update
 
@@ -49,6 +51,7 @@ install parallel
 install phantomjs
 install pwgen
 install python
+install R
 install rename
 install rlwrap
 install tig
@@ -78,11 +81,16 @@ install imagemagick
 install exiftool
 install ufraw
 install jpegoptim
+install librsvg
 
 # Install video packages
 install ffmpeg
 install mkvtoolnix
 install mplayer
+
+# Install extra filesystems support
+install osxfuse
+install ext4fuse
 
 # Remove outdated versions from the cellar
 cleanup

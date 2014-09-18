@@ -8,7 +8,7 @@ cask install google-chrome
 cask install firefox
 cask install gpgtools
 cask install java
-cask install jumpcut
+cask install clipmenu
 cask install libreoffice
 cask install spectacle
 cask install skype
@@ -37,8 +37,10 @@ cask install heroku-toolbelt
 cask install seashore
 cask install imageoptim
 cask install skitch
+cask install sketch
 cask install inkscape # requires xquartz
 cask install xquartz
+cask install adobe-dng-converter
 
 # music apps
 cask install lastfm
@@ -50,3 +52,7 @@ cask install mplayerx
 cask install miro-video-converter
 cask install vlc
 cask install handbrake
+cask install subler
+cask install subtitles
+cask install identify
+cask install airflick

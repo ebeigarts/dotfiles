@@ -39,7 +39,7 @@ alias grm="git status | grep -A 1000 'Changed but not updated' | grep deleted | 
 function ga { git add ${*:-.}; }
 alias gl='git log --graph "--pretty=format:%C(yellow bold)%h%Creset by %C(red)%an%Creset (%ar)%C(cyan bold)%d%Creset%n%s%n%b" --all'
 function gt { git branch --set-upstream $1 origin/$1; }
-alias gw='git-web'
+alias gw='hub browse'
 
 # fix wget
 alias wget='wget --no-check-certificate'
