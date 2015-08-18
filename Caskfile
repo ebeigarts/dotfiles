@@ -2,18 +2,32 @@
 # Usage: `brew bundle Caskfile`
 
 install caskroom/cask/brew-cask
+tap caskroom/versions
+tap caskroom/fonts
 
 # main apps
-cask install google-chrome
-cask install firefox
 cask install gpgtools
-cask install java
 cask install clipmenu
 cask install libreoffice
 cask install spectacle
-cask install skype
 cask install the-unarchiver
 cask install menumeters
+cask install appcleaner
+cask install torbrowser
+cask install adobe-air
+
+# browsers
+cask install google-chrome
+cask install firefox
+
+# communication
+cask install skype
+cask install gitter
+
+# java
+cask install java # java8
+cask install java7
+cask install java6
 
 # storage apps
 cask install cloud
@@ -32,6 +46,9 @@ cask install vagrant
 cask install virtualbox
 cask install sequel-pro
 cask install heroku-toolbelt
+cask install boot2docker
+install android-sdk
+cask install intel-haxm # for android-sdk
 
 # image processing apps
 cask install seashore
@@ -41,11 +58,16 @@ cask install sketch
 cask install inkscape # requires xquartz
 cask install xquartz
 cask install adobe-dng-converter
+cask install raw-therapee
+cask install gimp-lisanet
+cask install raw-photo-processor
+cask install darktable
 
 # music apps
 cask install lastfm
 cask install soundcleod
 cask install spotify
+cask install audacity
 
 # video apps
 cask install mplayerx
@@ -56,3 +78,22 @@ cask install subler
 cask install subtitles
 cask install identify
 cask install airflick
+
+# fonts
+cask install font-open-sans
+cask install font-roboto
+cask install font-noto-sans
+cask install font-pt-sans
+cask install font-droid-sans
+cask install font-titillium-web
+cask install font-oswald
+cask install font-play
+cask install font-lato
+cask install font-inconsolata
+cask install font-clear-sans
+cask install font-source-sans-pro
+cask install font-raleway
+cask install font-casper
+
+# fun
+cask install cathode

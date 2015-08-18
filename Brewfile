@@ -2,6 +2,8 @@
 # Usage: `brew bundle Brewfile`
 
 tap homebrew/science
+tap gapple/services
+tap ebeigarts/homebrew-magic-lantern
 
 # Make sure we’re using the latest Homebrew
 update
@@ -21,6 +23,7 @@ install cloc
 install cmake
 install colordiff
 install curl
+install fig
 install gawk
 install gdbm
 install gist
@@ -82,15 +85,19 @@ install exiftool
 install ufraw
 install jpegoptim
 install librsvg
+install --HEAD cr2hdr
+install --HEAD raw2dng
 
 # Install video packages
-install ffmpeg
+install mediainfo
+install ffmpeg --with-tools --with-fdk-aac
+install gpac
 install mkvtoolnix
 install mplayer
 
-# Install extra filesystems support
-install osxfuse
-install ext4fuse
+# Install extra filesystems support (NOT WORKING)
+# install osxfuse
+# install ext4fuse
 
 # Remove outdated versions from the cellar
 cleanup

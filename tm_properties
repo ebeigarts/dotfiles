@@ -7,7 +7,7 @@ softWrap         = false
 softTabs         = true
 tabSize          = 2
 wrapColumn       = 80
-scmStatus        = false # Adding/Renaming files is buggy
+scmStatus        = true
 
 # Includes and excludes
 include               = "{$include,.*}"

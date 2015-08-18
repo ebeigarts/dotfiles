@@ -68,9 +68,17 @@ export SQLPATH=$HOME
 
 ### Java
 export JAVA_HOME=$(/usr/libexec/java_home)
-export JRUBY_OPTS="--dev -J-Xmn128m -J-Xms256m -J-Xmx1024m -J-XX:MaxPermSize=512m -J-XX:ReservedCodeCacheSize=512M -J-XX:+TieredCompilation -J-Djruby.launch.inproc=true"
+export JRUBY_OPTS="--dev -J-Xmn128m -J-Xms256m -J-Xmx1024m -J-XX:ReservedCodeCacheSize=512M -J-XX:+TieredCompilation -J-Djruby.launch.inproc=true"
 export SBT_OPTS="-Xmn128m -Xms256m -Xmx1024m"
 
 ### Homebrew
 export PATH=$HOME/.homebrew/sbin:$HOME/.homebrew/bin:$PATH
 export MANPATH=$HOME/.homebrew/share/man:$MANPATH
+
+### Docker
+# export DOCKER_HOST=tcp://localhost:2375
+# export DOCKER_HOST=tcp://192.168.59.103:2375
+export DOCKER_HOST=tcp://192.168.33.10:2375
+
+### Caskroom
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"

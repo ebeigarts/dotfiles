@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -ex
+
+docker rm $(docker ps -a -q) || true
+docker rmi $(docker images | grep '^<none>' | awk '{print $3}') || true
