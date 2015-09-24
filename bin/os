@@ -1,0 +1,3 @@
+#!/bin/bash
+
+open `ls -1 tmp/capybara/screenshot_*.png | tail -1`
