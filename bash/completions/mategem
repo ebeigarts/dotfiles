@@ -10,5 +10,5 @@ _mategem()
 complete -F _mategem -o dirnames mategem
 complete -F _mategem -o dirnames mgem
 
-function mategem { mate "$(gem environment gemdir)/gems/$1"; }
+function mategem { atom "$(gem environment gemdir)/gems/$1"; }
 alias mgem='mategem'

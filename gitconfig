@@ -6,7 +6,6 @@
 [apply]
   whitespace = nowarn
 [core]
-  editor = mate -w
   excludesfile = ~/.gitignore
 [branch]
   autosetuprebase = always

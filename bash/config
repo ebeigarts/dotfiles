@@ -27,7 +27,8 @@ _rvm_prompt() { local s=$(rvm-prompt v g); printf "${s:+ ${s}}"; }
 export PS1="[ \[\e[31;1m\]\$(_user_root)\[\e[34;1m\]\w\[\e[30;1m\]\$(_rvm_prompt)\[\e[32;1m\]\$(_scm_info)\[\e[0m\] ]\[\e[31;1m\] %\[\e[0m\] "
 
 export PATH=./bin:$HOME/bin:$HOME/.gem/ruby/2.0.0/bin:/opt/local/bin:/opt/local/sbin:/sw/bin:$PATH
-export EDITOR="mate -w"
+export EDITOR="atom -w"
+export BUNDLER_EDITOR="atom"
 # stty erase ^H # brakes backspace in vim
 
 ### Bash http://blog.macromates.com/2008/working-with-history-in-bash/
@@ -82,3 +83,7 @@ export DOCKER_HOST=tcp://192.168.33.10:2375
 
 ### Caskroom
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+### Go
+export GOPATH=/usr/local/Cellar/go
+export PATH=$PATH:$GOPATH/bin

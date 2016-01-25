@@ -26,6 +26,6 @@ for f in ~/code/*; do
   find $f -regex '.*tmp/cache/.*' -exec rm -rf {} \;
   find $f -regex '.*uploads/tmp/.*' -exec rm -rf {} \;
   [ -d $f/.git ] && cd $f && git remote prune origin
-  [ -e $f/Gemfile ] && cd $f && bundle clean --force
+  [ -e $f/Gemfile ] && bash --login -c "cd $f && bundle clean --force"
   set +x
 done

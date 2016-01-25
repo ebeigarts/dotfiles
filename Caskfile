@@ -30,7 +30,7 @@ cask install java7
 cask install java6
 
 # storage apps
-cask install cloud
+# cask install cloud
 cask install dropbox
 cask install google-drive
 cask install cyberduck
@@ -44,9 +44,13 @@ cask install macvim
 cask install github
 cask install vagrant
 cask install virtualbox
+cask install virtualbox-extension-pack
 cask install sequel-pro
+cask install postico
+cask install pgadmin3
 cask install heroku-toolbelt
 cask install boot2docker
+cask install docker-compose
 install android-sdk
 cask install intel-haxm # for android-sdk
 
@@ -58,14 +62,13 @@ cask install sketch
 cask install inkscape # requires xquartz
 cask install xquartz
 cask install adobe-dng-converter
-cask install raw-therapee
-cask install gimp-lisanet
-cask install raw-photo-processor
-cask install darktable
+# cask install raw-therapee
+# cask install gimp-lisanet
+# cask install raw-photo-processor
+# cask install darktable
+# cask install camerabag
 
 # music apps
-cask install lastfm
-cask install soundcleod
 cask install spotify
 cask install audacity
 
@@ -94,6 +97,8 @@ cask install font-clear-sans
 cask install font-source-sans-pro
 cask install font-raleway
 cask install font-casper
+cask install font-gidole
+cask install font-dosis
 
 # fun
 cask install cathode

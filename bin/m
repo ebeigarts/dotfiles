@@ -2,12 +2,12 @@
 
 if [ $# -eq 0 ]; then
   if [ -e TODO.md ]; then
-    mate . && mate TODO.md
+    atom . TODO.md
   elif [ -e README.md ]; then
-    mate . && mate README.md
+    atom . README.md
   else
-    mate .
+    atom .
   fi
 else
-  mate $@
+  atom $@
 fi

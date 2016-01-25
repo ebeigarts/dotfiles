@@ -27,6 +27,9 @@ sudo nvram SystemAudioVolume=" "
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
+# Menu bar: Theme
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
 # Appearance: Graphite
 defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
