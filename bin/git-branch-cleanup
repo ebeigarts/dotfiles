@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+# system "git fetch origin"
+# system "git remote prune origin"
+
+branches = `git branch -a`.split("\n").each { |b| b.gsub!(/^[\*\s]+/, '') }
+branches.reject! { |b| b.include?("HEAD") }
+remote_branches, local_branches = branches.partition { |b| b.start_with?("remotes") }
+remote_branches.each { |b| b.gsub!(/^remotes\/origin\//, '') }
+
+puts "Local: #{local_branches * ','}"
+puts "Remote: #{remote_branches * ','}"
+
+local_branches.each do |b|
+  unless remote_branches.include?(b)
+    printf "Delete #{b}? [Y/n]"
+    if ARGV[0] != '-n'
+      input = ARGV[0] == '-f' ? 'y' : STDIN.gets.chomp.downcase
+      if input == "" || input == "y"
+        printf " "
+        system "git branch -D #{b}"
+      else
+        printf " -> skipped\n"
+      end
+    else
+      printf "\n"
+    end
+  end
+end
