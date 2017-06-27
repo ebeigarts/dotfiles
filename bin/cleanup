@@ -9,6 +9,9 @@ rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*
 rm -rf ~/Library/Application\ Support/iPhone\ Simulator/*
 rm -rf ~/Library/Developer/Shared/Documentation/DocSets/*
 
+# clean iTunes software updates
+rm -rf ~/Library/iTunes/iPhone\ Software\ Updates/*
+
 # clean mail downloads
 rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/*
 
