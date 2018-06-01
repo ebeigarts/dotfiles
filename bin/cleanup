@@ -7,7 +7,14 @@ rm -rf ~/library/Developer/Xcode/DerivedData/*
 rm -rf ~/Library/Developer/Xcode/Archives/*
 rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*
 rm -rf ~/Library/Application\ Support/iPhone\ Simulator/*
+rm -rf ~/Library/Developer/CoreSimulator/Devices/*
 rm -rf ~/Library/Developer/Shared/Documentation/DocSets/*
+
+sudo rm -rf /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform
+sudo rm -rf /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform
+sudo rm -rf /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform
+sudo rm -rf /Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform
+sudo rm -rf /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform
 
 # clean iTunes software updates
 rm -rf ~/Library/iTunes/iPhone\ Software\ Updates/*
@@ -15,20 +22,31 @@ rm -rf ~/Library/iTunes/iPhone\ Software\ Updates/*
 # clean mail downloads
 rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/*
 
+# clean homebrew cache
+rm -rf /Users/ebeigarts/Library/Caches/Homebrew/*
+
+# cleanup spotify cache
+rm -rf ~/Library/Caches/com.spotify.client/*
+
+# cleanup postgres
+#vacuumdb --full -a
+
+brew cleanup
+
 set +x
 
 # clean code
 for f in ~/code/*; do
   echo "-----> Cleaning $f"
   set -x
-  find $f -regex '.*log/.*\.log' -exec rm {} \;
+  find $f -regex '.*log/.*\.log' -exec cp /dev/null {} \;
   find $f -regex '.*tmp/miniprofiler/.*' -exec rm -rf {} \;
   find $f -regex '.*tmp/letter_opener/.*' -exec rm -rf {} \;
   find $f -regex '.*tmp/sass-cache/.*' -exec rm -rf {} \;
   find $f -regex '.*tmp/capybara/.*' -exec rm -rf {} \;
   find $f -regex '.*tmp/cache/.*' -exec rm -rf {} \;
   find $f -regex '.*uploads/tmp/.*' -exec rm -rf {} \;
-  [ -d $f/.git ] && cd $f && git remote prune origin
-  [ -e $f/Gemfile ] && bash --login -c "cd $f && bundle clean --force"
+#  [ -d $f/.git ] && cd $f && git remote prune origin
+#  [ -e $f/Gemfile ] && bash --login -c "cd $f && bundle clean --force"
   set +x
 done
