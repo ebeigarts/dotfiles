@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -ex
+
+basename $(pwd) | pbcopy
+open https://bitbucket.org/repo/create?owner=mak-it
+
+echo "Continue?"
+read
+git remote add bitbucket git@bitbucket.org:mak-it/$(basename $(pwd)).git || true
+git push bitbucket refs/remotes/origin/*:refs/heads/*
